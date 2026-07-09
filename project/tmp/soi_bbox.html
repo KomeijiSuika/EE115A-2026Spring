@@ -1,0 +1,1166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>A g/sub m//I/sub D/ based methodology for the design of CMOS analog circuits and its application to the synthesis of a silicon-on-insulator micropower OTA</title>
+<meta name="Subject" content="IEEE Journal of Solid-State Circuits;1996;31;9;10.1109/4.535416"/>
+<meta name="Author" content="F. Silveira;D. Flandre;P.G.A. Jespers"/>
+<meta name="Creator" content="Acrobat Capture 3.0"/>
+<meta name="Producer" content="Adobe PDF Library 4.0; modified using iText® 7.1.1 ©2000-2018 iText Group NV (AGPL-version)"/>
+<meta name="CreationDate" content="2004-03-16T00:29:26+05:30"/>
+<meta name="ModDate" content="2018-10-31T08:40:59-04"/>
+</head>
+<body>
+<doc>
+  <page width="613.439210" height="793.679810">
+    <flow>
+      <block xMin="516.500000" yMin="62.243610" xMax="528.954400" yMax="67.701110">
+        <line xMin="516.500000" yMin="62.243610" xMax="528.954400" yMax="67.701110">
+          <word xMin="516.500000" yMin="62.243610" xMax="528.954400" yMax="67.701110">1315</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="52.300000" yMin="62.372010" xMax="290.159790" yMax="68.312010">
+        <line xMin="52.300000" yMin="62.372010" xMax="290.159790" yMax="68.312010">
+          <word xMin="52.300000" yMin="62.508610" xMax="66.620800" yMax="68.268610">IEEE</word>
+          <word xMin="68.800000" yMin="62.508610" xMax="98.252122" yMax="68.268610">JOURNAL</word>
+          <word xMin="100.900000" yMin="62.576910" xMax="109.590400" yMax="68.246910">OF</word>
+          <word xMin="111.600000" yMin="62.508610" xMax="152.440800" yMax="68.268610">SOLID-STATE</word>
+          <word xMin="154.000000" yMin="62.508610" xMax="184.758400" yMax="68.268610">CIRCUITS,</word>
+          <word xMin="187.700000" yMin="62.440310" xMax="202.682500" yMax="68.290310">VOL.</word>
+          <word xMin="205.200000" yMin="62.372010" xMax="213.791000" yMax="68.312010">31,</word>
+          <word xMin="215.800000" yMin="62.440310" xMax="226.472200" yMax="68.290310">NO.</word>
+          <word xMin="229.100000" yMin="62.440310" xMax="234.350000" yMax="68.290310">9,</word>
+          <word xMin="236.600000" yMin="62.372010" xMax="274.163500" yMax="68.312010">SEPTEMBER</word>
+          <word xMin="277.000000" yMin="62.372010" xMax="290.159790" yMax="68.312010">1996</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="60.400000" yMin="90.167110" xMax="66.621939" yMax="96.377110">
+        <line xMin="60.400000" yMin="90.167110" xMax="66.621939" yMax="96.377110">
+          <word xMin="60.400000" yMin="90.167110" xMax="66.621939" yMax="96.377110">35</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="340.800000" yMin="93.130610" xMax="343.997000" yMax="101.825610">
+        <line xMin="340.800000" yMin="93.130610" xMax="343.997000" yMax="101.825610">
+          <word xMin="340.800000" yMin="93.130610" xMax="343.997000" yMax="101.825610">I</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="432.100000" yMin="93.664510" xMax="461.811918" yMax="101.854510">
+        <line xMin="432.100000" yMin="93.664510" xMax="461.811918" yMax="101.854510">
+          <word xMin="432.100000" yMin="93.848610" xMax="434.018200" yMax="101.618610">I</word>
+          <word xMin="434.900000" yMin="93.664510" xMax="461.811918" yMax="101.854510">BVDD</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="60.800000" yMin="112.225610" xMax="67.954000" yMax="118.885610">
+        <line xMin="60.800000" yMin="112.225610" xMax="67.954000" yMax="118.885610">
+          <word xMin="60.800000" yMin="112.225610" xMax="67.954000" yMax="118.885610">30</word>
+        </line>
+      </block>
+      <block xMin="60.600000" yMin="134.593910" xMax="66.839935" yMax="141.163910">
+        <line xMin="60.600000" yMin="134.593910" xMax="66.839935" yMax="141.163910">
+          <word xMin="60.600000" yMin="134.593910" xMax="66.839935" yMax="141.163910">25</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="61.000000" yMin="199.225610" xMax="68.007927" yMax="205.885610">
+        <line xMin="61.000000" yMin="199.225610" xMax="68.007927" yMax="205.885610">
+          <word xMin="61.000000" yMin="199.225610" xMax="68.007927" yMax="205.885610">10</word>
+        </line>
+      </block>
+      <block xMin="63.700000" yMin="221.398810" xMax="66.350000" yMax="227.698810">
+        <line xMin="63.700000" yMin="221.398810" xMax="66.350000" yMax="227.698810">
+          <word xMin="63.700000" yMin="221.398810" xMax="66.350000" yMax="227.698810">5</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="295.900000" yMin="237.025610" xMax="315.748000" yMax="243.685610">
+        <line xMin="295.900000" yMin="237.025610" xMax="315.748000" yMax="243.685610">
+          <word xMin="295.900000" yMin="237.025610" xMax="307.900981" yMax="243.685610">Fig.</word>
+          <word xMin="310.200000" yMin="237.093910" xMax="315.748000" yMax="243.663910">2.</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="63.000000" yMin="242.818810" xMax="74.380000" yMax="249.892810">
+        <line xMin="63.000000" yMin="242.818810" xMax="74.380000" yMax="249.892810">
+          <word xMin="63.000000" yMin="243.412810" xMax="66.502800" yMax="249.425310">0</word>
+          <word xMin="68.800000" yMin="242.818810" xMax="74.380000" yMax="249.892810">c</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="64.400000" yMin="254.425610" xMax="75.451981" yMax="261.085610">
+        <line xMin="64.400000" yMin="254.425610" xMax="75.451981" yMax="261.085610">
+          <word xMin="64.400000" yMin="254.425610" xMax="75.451981" yMax="261.085610">10.”</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="323.200000" yMin="236.889010" xMax="443.317360" yMax="243.729010">
+        <line xMin="323.200000" yMin="236.889010" xMax="443.317360" yMax="243.729010">
+          <word xMin="323.200000" yMin="236.957310" xMax="336.256648" yMax="243.707310">SO1</word>
+          <word xMin="337.900000" yMin="237.025610" xMax="373.173600" yMax="243.685610">micropower</word>
+          <word xMin="376.700000" yMin="236.889010" xMax="391.462852" yMax="243.729010">OTA</word>
+          <word xMin="393.800000" yMin="237.025610" xMax="408.801500" yMax="243.685610">basic</word>
+          <word xMin="412.299660" yMin="237.025610" xMax="443.317360" yMax="243.685610">schematic.</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="280.100000" yMin="244.243610" xMax="282.018200" yMax="249.701110">
+        <line xMin="280.100000" yMin="244.243610" xMax="282.018200" yMax="249.701110">
+          <word xMin="280.100000" yMin="244.243610" xMax="282.018200" yMax="249.701110">I</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="94.200060" yMin="254.425610" xMax="113.705368" yMax="261.085610">
+        <line xMin="94.200060" yMin="254.425610" xMax="113.705368" yMax="261.085610">
+          <word xMin="94.200060" yMin="254.425610" xMax="113.705368" yMax="261.085610">10-l~</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="183.800000" yMin="254.767110" xMax="191.858000" yMax="260.977110">
+        <line xMin="183.800000" yMin="254.767110" xMax="191.858000" yMax="260.977110">
+          <word xMin="183.800000" yMin="254.767110" xMax="191.858000" yMax="260.977110">10.’</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="243.100000" yMin="254.525610" xMax="251.160000" yMax="260.908110">
+        <line xMin="243.100000" yMin="254.525610" xMax="251.160000" yMax="260.908110">
+          <word xMin="243.100000" yMin="254.525610" xMax="251.160000" yMax="260.908110">10”</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="272.800000" yMin="254.767110" xMax="282.725860" yMax="260.977110">
+        <line xMin="272.800000" yMin="254.767110" xMax="282.725860" yMax="260.977110">
+          <word xMin="272.800000" yMin="254.767110" xMax="282.725860" yMax="260.977110">lo4</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="155.500000" yMin="264.084110" xMax="195.671200" yMax="271.194110">
+        <line xMin="155.500000" yMin="264.084110" xMax="195.671200" yMax="271.194110">
+          <word xMin="155.500000" yMin="264.152410" xMax="183.473600" yMax="271.172410">ID/(W/L)</word>
+          <word xMin="185.400000" yMin="264.084110" xMax="195.671200" yMax="271.194110">(A)</word>
+        </line>
+      </block>
+      <block xMin="51.799410" yMin="280.338410" xMax="285.752800" yMax="319.985650">
+        <line xMin="51.800000" yMin="280.338410" xMax="284.573670" yMax="287.229010">
+          <word xMin="51.800000" yMin="280.525610" xMax="63.800981" yMax="287.185610">Fig.</word>
+          <word xMin="67.100000" yMin="280.389010" xMax="72.275000" yMax="287.229010">1.</word>
+          <word xMin="79.100000" yMin="280.525610" xMax="110.322100" yMax="287.185610">Calculated</word>
+          <word xMin="115.399980" yMin="280.525610" xMax="143.380880" yMax="287.185610">(applying</word>
+          <word xMin="147.700290" yMin="280.525610" xMax="156.620890" yMax="287.185610">the</word>
+          <word xMin="161.300190" yMin="280.525610" xMax="179.550190" yMax="287.185610">model</word>
+          <word xMin="184.100280" yMin="280.525610" xMax="210.862080" yMax="287.185610">proposed</word>
+          <word xMin="215.800530" yMin="280.525610" xMax="221.479930" yMax="287.185610">in</word>
+          <word xMin="226.400000" yMin="280.338410" xMax="237.719000" yMax="287.090910">[7])</word>
+          <word xMin="241.300000" yMin="280.525610" xMax="252.133054" yMax="287.185610">and</word>
+          <word xMin="256.600070" yMin="280.525610" xMax="284.573670" yMax="287.185610">measured</word>
+        </line>
+        <line xMin="52.100000" yMin="288.452410" xMax="285.752800" yMax="295.472410">
+          <word xMin="52.100000" yMin="288.793910" xMax="55.500000" yMax="295.363910">g</word>
+          <word xMin="56.860000" yMin="288.793910" xMax="61.769600" yMax="295.363910">m</word>
+          <word xMin="63.129600" yMin="288.793910" xMax="65.020000" yMax="295.363910">/</word>
+          <word xMin="66.380000" yMin="288.793910" xMax="68.644400" yMax="295.363910">I</word>
+          <word xMin="70.004400" yMin="288.793910" xMax="74.914000" yMax="295.363910">D</word>
+          <word xMin="79.800000" yMin="288.725610" xMax="98.451500" yMax="295.385610">versus</word>
+          <word xMin="102.700000" yMin="288.452410" xMax="105.530500" yMax="295.472410">I</word>
+          <word xMin="106.805415" yMin="288.452410" xMax="112.942415" yMax="295.472410">D</word>
+          <word xMin="114.217330" yMin="288.452410" xMax="116.580330" yMax="295.472410">/</word>
+          <word xMin="117.855245" yMin="288.452410" xMax="120.685745" yMax="295.472410">(</word>
+          <word xMin="121.960660" yMin="288.452410" xMax="129.041160" yMax="295.472410">W</word>
+          <word xMin="130.316075" yMin="288.452410" xMax="132.679075" yMax="295.472410">/</word>
+          <word xMin="133.953990" yMin="288.452410" xMax="138.679990" yMax="295.472410">L</word>
+          <word xMin="139.954905" yMin="288.452410" xMax="142.785405" yMax="295.472410">)</word>
+          <word xMin="143.300000" yMin="288.725610" xMax="163.082635" yMax="295.385610">curves</word>
+          <word xMin="166.700369" yMin="288.725610" xMax="175.504023" yMax="295.385610">for</word>
+          <word xMin="179.400000" yMin="288.589010" xMax="199.584281" yMax="295.429010">nMOS</word>
+          <word xMin="204.100000" yMin="288.725610" xMax="214.933054" yMax="295.385610">and</word>
+          <word xMin="218.400000" yMin="288.657310" xMax="238.550200" yMax="295.407310">PMOS</word>
+          <word xMin="242.900000" yMin="288.725610" xMax="268.858800" yMax="295.385610">thin-film</word>
+          <word xMin="273.000000" yMin="288.657310" xMax="285.752800" yMax="295.407310">SO1</word>
+        </line>
+        <line xMin="52.300000" yMin="297.025610" xMax="284.553460" yMax="303.685610">
+          <word xMin="52.300000" yMin="297.025610" xMax="93.253000" yMax="303.685610">fully-depleted</word>
+          <word xMin="96.200010" yMin="297.025610" xMax="126.210310" yMax="303.685610">transistors</word>
+          <word xMin="129.200390" yMin="297.025610" xMax="140.033444" yMax="303.685610">and</word>
+          <word xMin="142.800000" yMin="297.025610" xMax="162.979578" yMax="303.685610">nMOS</word>
+          <word xMin="166.000000" yMin="297.025610" xMax="176.541200" yMax="303.685610">and</word>
+          <word xMin="178.899830" yMin="297.025610" xMax="199.215511" yMax="303.685610">PMOS</word>
+          <word xMin="201.699920" yMin="297.025610" xMax="214.679320" yMax="303.685610">bulk</word>
+          <word xMin="217.700060" yMin="297.025610" xMax="247.710360" yMax="303.685610">transistors</word>
+          <word xMin="250.900460" yMin="297.025610" xMax="284.553460" yMax="303.685610">(Calculated</word>
+        </line>
+        <line xMin="52.300000" yMin="305.089010" xMax="284.394200" yMax="311.929010">
+          <word xMin="52.300000" yMin="305.157310" xMax="66.656400" yMax="311.907310">SOI:</word>
+          <word xMin="68.900000" yMin="305.225610" xMax="83.098500" yMax="311.885610">solid</word>
+          <word xMin="85.800230" yMin="305.225610" xMax="98.575230" yMax="311.885610">line,</word>
+          <word xMin="101.200310" yMin="305.225610" xMax="129.173910" yMax="311.885610">measured</word>
+          <word xMin="132.100000" yMin="305.225610" xMax="146.456400" yMax="311.885610">SOI:</word>
+          <word xMin="148.600000" yMin="305.225610" xMax="168.528562" yMax="311.885610">circles</word>
+          <word xMin="170.600000" yMin="305.157310" xMax="198.372050" yMax="311.907310">(nMOS),</word>
+          <word xMin="200.800000" yMin="305.225610" xMax="222.692700" yMax="311.885610">squares</word>
+          <word xMin="225.500000" yMin="305.089010" xMax="253.032500" yMax="311.929010">@MOS),</word>
+          <word xMin="254.800000" yMin="305.225610" xMax="284.394200" yMax="311.885610">calculated</word>
+        </line>
+        <line xMin="51.799410" yMin="313.325650" xMax="109.905220" yMax="319.985650">
+          <word xMin="51.799410" yMin="313.325650" xMax="66.808210" yMax="319.985650">bulk:</word>
+          <word xMin="70.599100" yMin="313.325650" xMax="90.871200" yMax="319.985650">dashed</word>
+          <word xMin="94.699320" yMin="313.325650" xMax="109.905220" yMax="319.985650">line).</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="51.599600" yMin="337.644910" xMax="285.267120" yMax="401.997900">
+        <line xMin="52.100000" yMin="337.644910" xMax="285.267120" yMax="346.914910">
+          <word xMin="52.100000" yMin="338.327910" xMax="91.757072" yMax="346.697910">sometimes</word>
+          <word xMin="94.699830" yMin="338.327910" xMax="135.030120" yMax="346.697910">interpreted</word>
+          <word xMin="138.099550" yMin="338.327910" xMax="145.861759" yMax="346.697910">as</word>
+          <word xMin="149.300000" yMin="337.644910" xMax="153.473600" yMax="346.914910">a</word>
+          <word xMin="156.600000" yMin="338.327910" xMax="187.466654" yMax="346.697910">measure</word>
+          <word xMin="190.700000" yMin="337.986410" xMax="198.189209" yMax="346.806410">of</word>
+          <word xMin="201.700000" yMin="338.327910" xMax="213.002018" yMax="346.697910">the</word>
+          <word xMin="216.599976" yMin="338.327910" xMax="285.267120" yMax="346.697910">“transconductance</word>
+        </line>
+        <line xMin="51.800250" yMin="349.189610" xMax="153.975751" yMax="357.597510">
+          <word xMin="51.800250" yMin="349.227510" xMax="91.029531" yMax="357.597510">generation</word>
+          <word xMin="94.900580" yMin="349.227510" xMax="134.411870" yMax="357.597510">efficiency”</word>
+          <word xMin="139.700000" yMin="349.189610" xMax="142.007400" yMax="357.422110">[</word>
+          <word xMin="142.920317" yMin="349.189610" xMax="147.535117" yMax="357.422110">6</word>
+          <word xMin="148.448034" yMin="349.189610" xMax="150.755434" yMax="357.422110">]</word>
+          <word xMin="151.668351" yMin="349.189610" xMax="153.975751" yMax="357.422110">.</word>
+        </line>
+        <line xMin="61.000000" yMin="357.561210" xMax="284.897847" yMax="369.308710">
+          <word xMin="61.000000" yMin="360.327910" xMax="75.332318" yMax="368.697910">The</word>
+          <word xMin="77.499756" yMin="360.327910" xMax="105.936619" yMax="368.697910">relation</word>
+          <word xMin="108.199880" yMin="360.327910" xMax="115.689089" yMax="368.697910">of</word>
+          <word xMin="118.299970" yMin="360.327910" xMax="129.601988" yMax="368.697910">the</word>
+          <word xMin="131.900000" yMin="357.561210" xMax="149.785000" yMax="369.308710">MICR</word>
+          <word xMin="151.731000" yMin="357.561210" xMax="158.731000" yMax="369.308710">ID</word>
+          <word xMin="161.200000" yMin="360.327910" xMax="178.243936" yMax="368.697910">ratio</word>
+          <word xMin="180.700390" yMin="360.327910" xMax="196.606917" yMax="368.697910">with</word>
+          <word xMin="199.399980" yMin="360.327910" xMax="210.701998" yMax="368.697910">the</word>
+          <word xMin="213.000476" yMin="360.327910" xMax="247.688857" yMax="368.697910">transistor</word>
+          <word xMin="249.799875" yMin="360.327910" xMax="284.897847" yMax="368.697910">operating</word>
+        </line>
+        <line xMin="51.599600" yMin="371.527900" xMax="284.569064" yMax="379.897900">
+          <word xMin="51.599600" yMin="371.527900" xMax="72.092527" yMax="379.897900">mode</word>
+          <word xMin="75.299640" yMin="371.527900" xMax="87.748258" yMax="379.897900">can</word>
+          <word xMin="90.799670" yMin="371.527900" xMax="99.571979" yMax="379.897900">be</word>
+          <word xMin="103.000040" yMin="371.527900" xMax="136.487403" yMax="379.897900">observed</word>
+          <word xMin="139.199931" yMin="371.527900" xMax="157.163058" yMax="379.897900">from</word>
+          <word xMin="160.399746" yMin="371.527900" xMax="171.701764" yMax="379.897900">the</word>
+          <word xMin="174.699850" yMin="371.527900" xMax="188.886477" yMax="379.897900">fact</word>
+          <word xMin="191.599460" yMin="371.527900" xMax="205.522187" yMax="379.897900">that</word>
+          <word xMin="208.599625" yMin="371.527900" xMax="222.021852" yMax="379.897900">this</word>
+          <word xMin="224.899090" yMin="371.527900" xMax="241.943026" yMax="379.897900">ratio</word>
+          <word xMin="245.198824" yMin="371.527900" xMax="251.359433" yMax="379.897900">is</word>
+          <word xMin="254.298551" yMin="371.527900" xMax="274.372787" yMax="379.897900">equal</word>
+          <word xMin="277.398355" yMin="371.527900" xMax="284.569064" yMax="379.897900">to</word>
+        </line>
+        <line xMin="51.799800" yMin="382.086410" xMax="284.762209" yMax="390.906410">
+          <word xMin="51.799800" yMin="382.427500" xMax="62.737818" yMax="390.797500">the</word>
+          <word xMin="66.399840" yMin="382.427500" xMax="103.608921" yMax="390.797500">derivative</word>
+          <word xMin="106.399800" yMin="382.427500" xMax="113.889009" yMax="390.797500">of</word>
+          <word xMin="117.399880" yMin="382.427500" xMax="128.701898" yMax="390.797500">the</word>
+          <word xMin="131.899456" yMin="382.427500" xMax="174.768646" yMax="390.797500">logarithmic</word>
+          <word xMin="177.800220" yMin="382.427500" xMax="185.289429" yMax="390.797500">of</word>
+          <word xMin="188.800000" yMin="382.086410" xMax="192.229900" yMax="390.906410">I</word>
+          <word xMin="193.259797" yMin="382.086410" xMax="200.696397" yMax="390.906410">D</word>
+          <word xMin="202.800000" yMin="382.427910" xMax="218.706527" yMax="390.797910">with</word>
+          <word xMin="222.200290" yMin="382.427910" xMax="248.516944" yMax="390.797910">respect</word>
+          <word xMin="251.900142" yMin="382.427910" xMax="259.070851" yMax="390.797910">to</word>
+          <word xMin="262.600000" yMin="382.223010" xMax="272.329300" yMax="390.863010">V,</word>
+          <word xMin="277.000000" yMin="382.427910" xMax="284.762209" yMax="390.797910">as</word>
+        </line>
+        <line xMin="52.099870" yMin="393.627900" xMax="102.075796" yMax="401.997900">
+          <word xMin="52.099870" yMin="393.627900" xMax="76.223606" yMax="401.997900">shown</word>
+          <word xMin="80.199760" yMin="393.627900" xMax="102.075796" yMax="401.997900">below</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="51.599640" yMin="469.128090" xMax="285.110319" yMax="731.597560">
+        <line xMin="60.999670" yMin="469.128090" xMax="284.502495" yMax="477.498090">
+          <word xMin="60.999670" yMin="469.128090" xMax="77.725197" yMax="477.498090">This</word>
+          <word xMin="81.399140" yMin="469.128090" xMax="118.608221" yMax="477.498090">derivative</word>
+          <word xMin="121.898690" yMin="469.128090" xMax="128.332299" yMax="477.498090">is</word>
+          <word xMin="131.898680" yMin="469.128090" xMax="169.353734" yMax="477.498090">maximum</word>
+          <word xMin="173.398320" yMin="469.128090" xMax="180.387029" yMax="477.498090">in</word>
+          <word xMin="184.298300" yMin="469.128090" xMax="195.600318" yMax="477.498090">the</word>
+          <word xMin="199.397930" yMin="469.128090" xMax="218.325657" yMax="477.498090">weak</word>
+          <word xMin="222.597470" yMin="469.128090" xMax="257.194942" yMax="477.498090">inversion</word>
+          <word xMin="260.797450" yMin="469.128090" xMax="284.502495" yMax="477.498090">region</word>
+        </line>
+        <line xMin="51.797750" yMin="479.618110" xMax="284.659558" yMax="488.528110">
+          <word xMin="51.797750" yMin="480.027690" xMax="74.392686" yMax="488.397690">where</word>
+          <word xMin="77.297224" yMin="480.027690" xMax="88.599242" yMax="488.397690">the</word>
+          <word xMin="91.300000" yMin="479.959610" xMax="94.729900" yMax="488.419610">I</word>
+          <word xMin="95.862797" yMin="479.959610" xMax="103.299397" yMax="488.419610">D</word>
+          <word xMin="104.900000" yMin="480.027910" xMax="148.670181" yMax="488.397910">dependence</word>
+          <word xMin="151.299899" yMin="480.027910" xMax="175.004944" yMax="488.397910">versus</word>
+          <word xMin="177.800000" yMin="479.618110" xMax="192.523787" yMax="488.528110">VG</word>
+          <word xMin="192.100000" yMin="480.027910" xMax="198.533609" yMax="488.397910">is</word>
+          <word xMin="201.200000" yMin="480.027910" xMax="244.569690" yMax="488.397910">exponential</word>
+          <word xMin="247.199408" yMin="480.027910" xMax="267.783244" yMax="488.397910">while</word>
+          <word xMin="270.499412" yMin="480.027910" xMax="275.649921" yMax="488.397910">it</word>
+          <word xMin="278.498949" yMin="480.027910" xMax="284.659558" yMax="488.397910">is</word>
+        </line>
+        <line xMin="51.599640" yMin="490.927510" xMax="284.513594" yMax="499.297510">
+          <word xMin="51.599640" yMin="490.927510" xMax="86.188012" yMax="499.297510">quadratic</word>
+          <word xMin="89.499320" yMin="490.927510" xMax="96.488029" yMax="499.297510">in</word>
+          <word xMin="100.399300" yMin="490.927510" xMax="123.603845" yMax="499.297510">strong</word>
+          <word xMin="126.698573" yMin="490.927510" xMax="163.661954" yMax="499.297510">inversion,</word>
+          <word xMin="167.198032" yMin="490.927510" xMax="203.724795" yMax="499.297510">becoming</word>
+          <word xMin="207.198083" yMin="490.927510" xMax="231.922328" yMax="499.297510">almost</word>
+          <word xMin="235.298246" yMin="490.927510" xMax="256.473491" yMax="499.297510">linear</word>
+          <word xMin="259.798449" yMin="490.927510" xMax="284.513594" yMax="499.297510">deeply</word>
+        </line>
+        <line xMin="51.599640" yMin="502.127500" xMax="284.431876" yMax="510.497500">
+          <word xMin="51.599640" yMin="502.127500" xMax="58.588349" yMax="510.497500">in</word>
+          <word xMin="63.699637" yMin="502.127500" xMax="85.994182" yMax="510.497500">strong</word>
+          <word xMin="91.100010" yMin="502.127500" xMax="125.697482" yMax="510.497500">inversion</word>
+          <word xMin="129.799580" yMin="502.127500" xMax="159.146534" yMax="510.497500">because</word>
+          <word xMin="164.000110" yMin="502.127500" xMax="171.489319" yMax="510.497500">of</word>
+          <word xMin="176.500507" yMin="502.127500" xMax="187.438525" yMax="510.497500">the</word>
+          <word xMin="192.400573" yMin="502.127500" xMax="221.083136" yMax="510.497500">velocity</word>
+          <word xMin="226.800120" yMin="502.127500" xMax="265.874610" yMax="510.497500">saturation.</word>
+          <word xMin="270.099558" yMin="502.127500" xMax="284.431876" yMax="510.497500">The</word>
+        </line>
+        <line xMin="51.799840" yMin="512.727640" xMax="198.594936" yMax="521.097910">
+          <word xMin="51.799840" yMin="512.727640" xMax="88.162894" yMax="521.097640">maximum</word>
+          <word xMin="93.100190" yMin="512.727640" xMax="99.260799" yMax="521.097640">is</word>
+          <word xMin="103.200007" yMin="512.727640" xMax="123.274243" yMax="521.097640">equal</word>
+          <word xMin="127.000000" yMin="513.001110" xMax="134.079800" yMax="521.011110">to</word>
+          <word xMin="138.600000" yMin="512.932810" xMax="141.129800" yMax="521.032810">l</word>
+          <word xMin="143.768709" yMin="512.932810" xMax="146.298509" yMax="521.032810">/</word>
+          <word xMin="148.937418" yMin="512.932810" xMax="151.967718" yMax="521.032810">(</word>
+          <word xMin="154.606627" yMin="512.932810" xMax="159.156627" yMax="521.032810">n</word>
+          <word xMin="161.795536" yMin="512.932810" xMax="168.365736" yMax="521.032810">U</word>
+          <word xMin="171.004645" yMin="512.932810" xMax="175.927745" yMax="521.032810">~</word>
+          <word xMin="176.000000" yMin="512.727910" xMax="198.594936" yMax="521.097910">where</word>
+        </line>
+        <line xMin="178.566654" yMin="512.932810" xMax="181.596954" yMax="521.032810">
+          <word xMin="178.566654" yMin="512.932810" xMax="181.596954" yMax="521.032810">)</word>
+        </line>
+        <line xMin="202.600000" yMin="512.659610" xMax="285.110319" yMax="521.119610">
+          <word xMin="202.600000" yMin="512.659610" xMax="208.150000" yMax="521.119610">n</word>
+          <word xMin="211.900000" yMin="512.727910" xMax="218.333609" yMax="521.097910">is</word>
+          <word xMin="222.000090" yMin="512.727910" xMax="233.484108" yMax="521.097910">the</word>
+          <word xMin="237.600220" yMin="512.727910" xMax="285.110319" yMax="521.097910">subthreshold</word>
+        </line>
+        <line xMin="52.100360" yMin="523.923010" xMax="284.543936" yMax="532.563010">
+          <word xMin="52.100360" yMin="524.127850" xMax="71.674096" yMax="532.497850">slope</word>
+          <word xMin="75.500464" yMin="524.127850" xMax="97.176209" yMax="532.497850">factor</word>
+          <word xMin="101.400247" yMin="524.127850" xMax="114.722465" yMax="532.497850">and</word>
+          <word xMin="119.400000" yMin="523.923010" xMax="130.938709" yMax="532.563010">UT</word>
+          <word xMin="135.500000" yMin="524.127910" xMax="146.802018" yMax="532.497910">the</word>
+          <word xMin="151.100130" yMin="524.127910" xMax="178.354084" yMax="532.497910">thermal</word>
+          <word xMin="183.600052" yMin="524.127910" xMax="212.027815" yMax="532.497910">voltage.</word>
+          <word xMin="217.600200" yMin="524.127910" xMax="232.114518" yMax="532.497910">The</word>
+          <word xMin="236.300000" yMin="524.059610" xMax="240.050000" yMax="532.519610">g</word>
+          <word xMin="241.399925" yMin="524.059610" xMax="246.814925" yMax="532.519610">m</word>
+          <word xMin="248.164850" yMin="524.059610" xMax="250.249850" yMax="532.519610">/</word>
+          <word xMin="251.599775" yMin="524.059610" xMax="254.097275" yMax="532.519610">I</word>
+          <word xMin="255.447200" yMin="524.059610" xMax="260.862200" yMax="532.519610">D</word>
+          <word xMin="267.500000" yMin="524.127910" xMax="284.543936" yMax="532.497910">ratio</word>
+        </line>
+        <line xMin="52.100270" yMin="535.327900" xMax="284.896925" yMax="543.697900">
+          <word xMin="52.100270" yMin="535.327900" xMax="87.689642" yMax="543.697900">decreases</word>
+          <word xMin="89.300160" yMin="535.327900" xMax="97.062369" yMax="543.697900">as</word>
+          <word xMin="99.099950" yMin="535.327900" xMax="110.401968" yMax="543.697900">the</word>
+          <word xMin="112.600346" yMin="535.327900" xMax="147.698318" yMax="543.697900">operating</word>
+          <word xMin="149.499936" yMin="535.327900" xMax="168.573172" yMax="543.697900">point</word>
+          <word xMin="170.599560" yMin="535.327900" xMax="194.723296" yMax="543.697900">moves</word>
+          <word xMin="197.199770" yMin="535.327900" xMax="222.015015" yMax="543.697900">toward</word>
+          <word xMin="225.099460" yMin="535.327900" xMax="248.304005" yMax="543.697900">strong</word>
+          <word xMin="250.299453" yMin="535.327900" xMax="284.896925" yMax="543.697900">inversion</word>
+        </line>
+        <line xMin="51.799060" yMin="546.181510" xMax="284.565381" yMax="555.271510">
+          <word xMin="51.799060" yMin="546.727840" xMax="71.236387" yMax="555.097840">when</word>
+          <word xMin="75.200000" yMin="546.181510" xMax="78.629900" yMax="555.271510">I</word>
+          <word xMin="79.659797" yMin="546.181510" xMax="87.096397" yMax="555.271510">D</word>
+          <word xMin="89.400000" yMin="546.727910" xMax="97.344209" yMax="555.097910">or</word>
+          <word xMin="100.700000" yMin="546.318110" xMax="110.302791" yMax="555.228110">V,</word>
+          <word xMin="115.400000" yMin="546.727910" xMax="126.692918" yMax="555.097910">are</word>
+          <word xMin="129.799476" yMin="546.727910" xMax="164.888348" yMax="555.097910">increased</word>
+          <word xMin="168.500320" yMin="546.727910" xMax="175.989529" yMax="555.097910">as</word>
+          <word xMin="179.600500" yMin="546.727910" xMax="203.724236" yMax="555.097910">shown</word>
+          <word xMin="207.000600" yMin="546.727910" xMax="213.989309" yMax="555.097910">in</word>
+          <word xMin="217.600280" yMin="546.727910" xMax="232.287407" yMax="555.097910">Fig.</word>
+          <word xMin="236.300000" yMin="546.318110" xMax="243.425000" yMax="555.228110">1.</word>
+          <word xMin="245.600000" yMin="546.727910" xMax="284.565381" yMax="555.097910">Therefore,</word>
+        </line>
+        <line xMin="51.800030" yMin="557.859610" xMax="284.496872" yMax="566.319610">
+          <word xMin="51.800030" yMin="557.927900" xMax="63.102048" yMax="566.297900">the</word>
+          <word xMin="65.900000" yMin="557.859610" xMax="83.385904" yMax="566.319610">g,/ID</word>
+          <word xMin="95.800000" yMin="557.927910" xMax="112.480300" yMax="566.297910">ratio</word>
+          <word xMin="115.699880" yMin="557.927910" xMax="121.860489" yMax="566.297910">is</word>
+          <word xMin="124.799607" yMin="557.927910" xMax="139.732434" yMax="566.297910">also</word>
+          <word xMin="142.599662" yMin="557.927910" xMax="151.280971" yMax="566.297910">an</word>
+          <word xMin="154.399359" yMin="557.927910" xMax="187.477131" yMax="566.297910">indicator</word>
+          <word xMin="190.099660" yMin="557.927910" xMax="197.588869" yMax="566.297910">of</word>
+          <word xMin="200.799440" yMin="557.927910" xMax="212.101458" yMax="566.297910">the</word>
+          <word xMin="214.999080" yMin="557.927910" xMax="235.765007" yMax="566.297910">mode</word>
+          <word xMin="238.699120" yMin="557.927910" xMax="246.188329" yMax="566.297910">of</word>
+          <word xMin="249.398900" yMin="557.927910" xMax="284.496872" yMax="566.297910">operation</word>
+        </line>
+        <line xMin="52.099070" yMin="569.127900" xMax="115.444170" yMax="577.497900">
+          <word xMin="52.099070" yMin="569.127900" xMax="59.406279" yMax="577.497900">of</word>
+          <word xMin="63.999140" yMin="569.127900" xMax="74.937158" yMax="577.497900">the</word>
+          <word xMin="79.298970" yMin="569.127900" xMax="115.444170" yMax="577.497900">transistor.</word>
+        </line>
+        <line xMin="61.098970" yMin="580.191310" xMax="284.344386" yMax="588.741310">
+          <word xMin="61.098970" yMin="580.327890" xMax="73.593088" yMax="588.697890">Let</word>
+          <word xMin="77.800000" yMin="580.191310" xMax="85.603516" yMax="588.741310">us</word>
+          <word xMin="90.200000" yMin="580.327910" xMax="105.688018" yMax="588.697910">now</word>
+          <word xMin="110.500280" yMin="580.327910" xMax="141.967443" yMax="588.697910">consider</word>
+          <word xMin="146.199671" yMin="580.327910" xMax="157.501689" yMax="588.697910">the</word>
+          <word xMin="161.999637" yMin="580.327910" xMax="205.769818" yMax="588.697910">dependence</word>
+          <word xMin="209.900490" yMin="580.327910" xMax="217.389699" yMax="588.697910">of</word>
+          <word xMin="221.800000" yMin="580.464510" xMax="240.299600" yMax="588.654510">9,110</word>
+          <word xMin="253.200000" yMin="580.327910" xMax="262.481909" yMax="588.697910">on</word>
+          <word xMin="266.799950" yMin="580.327910" xMax="284.344386" yMax="588.697910">tran-</word>
+        </line>
+        <line xMin="52.300210" yMin="591.023010" xMax="284.137438" yMax="599.663010">
+          <word xMin="52.300210" yMin="591.227510" xMax="72.019910" yMax="599.597510">sistor</word>
+          <word xMin="76.000250" yMin="591.227510" xMax="92.425750" yMax="599.597510">size.</word>
+          <word xMin="96.000230" yMin="591.227510" xMax="110.332548" yMax="599.597510">The</word>
+          <word xMin="114.100130" yMin="591.227510" xMax="154.221211" yMax="599.597510">normalized</word>
+          <word xMin="159.399930" yMin="591.227510" xMax="185.716584" yMax="599.597510">current</word>
+          <word xMin="189.400000" yMin="591.023010" xMax="198.494797" yMax="599.663010">In</word>
+          <word xMin="202.800000" yMin="591.227910" xMax="208.960609" yMax="599.597910">is</word>
+          <word xMin="212.599517" yMin="591.227910" xMax="257.989407" yMax="599.597910">independent</word>
+          <word xMin="261.799850" yMin="591.227910" xMax="269.107059" yMax="599.597910">of</word>
+          <word xMin="273.199420" yMin="591.227910" xMax="284.137438" yMax="599.597910">the</word>
+        </line>
+        <line xMin="51.799150" yMin="602.059610" xMax="284.532548" yMax="610.519610">
+          <word xMin="51.799150" yMin="602.127510" xMax="88.298340" yMax="610.497510">transistors</word>
+          <word xMin="94.899480" yMin="602.127510" xMax="111.324980" yMax="610.497510">size.</word>
+          <word xMin="116.299040" yMin="602.127510" xMax="153.981412" yMax="610.497510">According</word>
+          <word xMin="160.199260" yMin="602.127510" xMax="167.369969" yMax="610.497510">to</word>
+          <word xMin="172.400000" yMin="602.264510" xMax="183.286810" yMax="610.454510">(3)</word>
+          <word xMin="188.000000" yMin="602.127910" xMax="199.302018" yMax="610.497910">the</word>
+          <word xMin="204.400000" yMin="602.059610" xMax="208.100000" yMax="610.519610">g</word>
+          <word xMin="209.505926" yMin="602.059610" xMax="214.848726" yMax="610.519610">m</word>
+          <word xMin="216.254652" yMin="602.059610" xMax="218.311852" yMax="610.519610">/</word>
+          <word xMin="219.717778" yMin="602.059610" xMax="222.181978" yMax="610.519610">I</word>
+          <word xMin="223.587904" yMin="602.059610" xMax="228.930704" yMax="610.519610">D</word>
+          <word xMin="236.300000" yMin="602.127910" xMax="253.343936" yMax="610.497910">ratio</word>
+          <word xMin="258.199514" yMin="602.127910" xMax="264.360123" yMax="610.497910">is</word>
+          <word xMin="269.599721" yMin="602.127910" xMax="284.532548" yMax="610.497910">also</word>
+        </line>
+        <line xMin="51.800230" yMin="613.127910" xMax="282.120000" yMax="621.497950">
+          <word xMin="51.800230" yMin="613.127950" xMax="66.223457" yMax="621.497950">size</word>
+          <word xMin="69.199885" yMin="613.127950" xMax="116.955684" yMax="621.497950">independent.</word>
+          <word xMin="119.899352" yMin="613.127950" xMax="158.864733" yMax="621.497950">Therefore,</word>
+          <word xMin="161.799301" yMin="613.127950" xMax="173.101319" yMax="621.497950">the</word>
+          <word xMin="176.298877" yMin="613.127950" xMax="220.269076" yMax="621.497950">relationship</word>
+          <word xMin="223.098084" yMin="613.127950" xMax="253.964738" yMax="621.497950">between</word>
+          <word xMin="257.200000" yMin="613.127910" xMax="261.200000" yMax="621.497910">g</word>
+          <word xMin="262.320000" yMin="613.127910" xMax="268.096000" yMax="621.497910">m</word>
+          <word xMin="269.216000" yMin="613.127910" xMax="271.440000" yMax="621.497910">/</word>
+          <word xMin="272.560000" yMin="613.127910" xMax="275.224000" yMax="621.497910">I</word>
+          <word xMin="276.344000" yMin="613.127910" xMax="282.120000" yMax="621.497910">D</word>
+        </line>
+        <line xMin="51.800000" yMin="624.027910" xMax="283.998400" yMax="632.397910">
+          <word xMin="51.800000" yMin="624.027910" xMax="64.758218" yMax="632.397910">and</word>
+          <word xMin="69.099646" yMin="624.027910" xMax="80.037664" yMax="632.397910">the</word>
+          <word xMin="83.999622" yMin="624.027910" xMax="124.120703" yMax="632.397910">normalized</word>
+          <word xMin="129.200050" yMin="624.027910" xMax="155.516704" yMax="632.397910">current</word>
+          <word xMin="159.600000" yMin="624.970410" xMax="165.676941" yMax="631.730010">is</word>
+          <word xMin="169.000000" yMin="624.232810" xMax="173.450000" yMax="632.332810">a</word>
+          <word xMin="177.099890" yMin="624.232810" xMax="202.375445" yMax="632.332810">unique</word>
+          <word xMin="205.700040" yMin="624.232810" xMax="256.793783" yMax="632.332810">characteristic</word>
+          <word xMin="258.700000" yMin="624.232810" xMax="271.094018" yMax="632.332810">for</word>
+          <word xMin="274.600000" yMin="624.232810" xMax="283.998400" yMax="632.332810">all</word>
+        </line>
+        <line xMin="51.600000" yMin="634.859610" xMax="284.343765" yMax="643.319610">
+          <word xMin="51.600000" yMin="634.859610" xMax="90.181500" yMax="643.319610">transistors</word>
+          <word xMin="93.100000" yMin="635.304310" xMax="100.471924" yMax="642.771310">of</word>
+          <word xMin="102.500000" yMin="635.132810" xMax="113.696022" yMax="643.232810">the</word>
+          <word xMin="115.700000" yMin="634.859610" xMax="134.276800" yMax="643.319610">same</word>
+          <word xMin="136.800000" yMin="635.132810" xMax="151.894133" yMax="643.232810">type</word>
+          <word xMin="154.400000" yMin="635.064510" xMax="182.278048" yMax="643.254510">(nMOS</word>
+          <word xMin="184.100000" yMin="635.132810" xMax="192.462900" yMax="643.232810">or</word>
+          <word xMin="193.900000" yMin="635.064510" xMax="222.754848" yMax="643.254510">PMOS)</word>
+          <word xMin="223.300000" yMin="635.132810" xMax="230.633511" yMax="643.232810">in</word>
+          <word xMin="232.400250" yMin="635.132810" xMax="236.850250" yMax="643.232810">a</word>
+          <word xMin="239.199850" yMin="635.132810" xMax="258.975650" yMax="643.232810">given</word>
+          <word xMin="261.400010" yMin="635.132810" xMax="284.343765" yMax="643.232810">batch.</word>
+        </line>
+        <line xMin="51.800000" yMin="646.327910" xMax="283.707767" yMax="654.697910">
+          <word xMin="51.800000" yMin="646.327910" xMax="61.036409" yMax="654.697910">Of</word>
+          <word xMin="64.800260" yMin="646.327910" xMax="91.371714" yMax="654.697910">course,</word>
+          <word xMin="94.400012" yMin="646.327910" xMax="107.822239" yMax="654.697910">this</word>
+          <word xMin="111.400177" yMin="646.327910" xMax="147.007749" yMax="654.697910">statement</word>
+          <word xMin="150.200120" yMin="646.327910" xMax="167.626347" yMax="654.697910">must</word>
+          <word xMin="171.400390" yMin="646.327910" xMax="180.172699" yMax="654.697910">be</word>
+          <word xMin="183.600760" yMin="646.327910" xMax="209.335014" yMax="654.697910">revised</word>
+          <word xMin="214.000402" yMin="646.327910" xMax="233.437729" yMax="654.697910">when</word>
+          <word xMin="237.400870" yMin="646.327910" xMax="264.736724" yMax="654.697910">dealing</word>
+          <word xMin="267.801240" yMin="646.327910" xMax="283.707767" yMax="654.697910">with</word>
+        </line>
+        <line xMin="51.800910" yMin="657.727850" xMax="147.086009" yMax="666.097850">
+          <word xMin="51.800910" yMin="657.727850" xMax="70.364546" yMax="666.097850">short</word>
+          <word xMin="73.901170" yMin="657.727850" xMax="101.655624" yMax="666.097850">channel</word>
+          <word xMin="106.400910" yMin="657.727850" xMax="147.086009" yMax="666.097850">transistors.</word>
+        </line>
+        <line xMin="60.800810" yMin="667.944910" xMax="283.848758" yMax="677.214910">
+          <word xMin="60.800810" yMin="668.627450" xMax="75.133128" yMax="676.997450">The</word>
+          <word xMin="78.401120" yMin="668.627450" xMax="118.931610" yMax="676.997450">“universal”</word>
+          <word xMin="123.500720" yMin="668.627450" xMax="149.325974" yMax="676.997450">quality</word>
+          <word xMin="152.400000" yMin="668.491310" xMax="159.889209" yMax="677.041310">of</word>
+          <word xMin="163.300000" yMin="668.627910" xMax="174.602018" yMax="676.997910">the</word>
+          <word xMin="177.600000" yMin="668.627910" xMax="181.600000" yMax="676.997910">g</word>
+          <word xMin="182.879920" yMin="668.627910" xMax="188.655920" yMax="676.997910">m</word>
+          <word xMin="189.935840" yMin="668.627910" xMax="192.159840" yMax="676.997910">/</word>
+          <word xMin="193.439760" yMin="668.627910" xMax="196.103760" yMax="676.997910">I</word>
+          <word xMin="197.383680" yMin="668.627910" xMax="203.159680" yMax="676.997910">D</word>
+          <word xMin="207.700000" yMin="668.627910" xMax="231.405045" yMax="676.997910">versus</word>
+          <word xMin="234.700000" yMin="667.944910" xMax="243.719300" yMax="677.214910">In</word>
+          <word xMin="247.600000" yMin="668.627910" xMax="268.174736" yMax="676.997910">curve</word>
+          <word xMin="271.400140" yMin="668.627910" xMax="283.848758" yMax="676.997910">can</word>
+        </line>
+        <line xMin="51.599650" yMin="679.527510" xMax="284.300118" yMax="687.897510">
+          <word xMin="51.599650" yMin="679.527510" xMax="60.371959" yMax="687.897510">be</word>
+          <word xMin="64.799200" yMin="679.527510" xMax="105.338790" yMax="687.897510">extensively</word>
+          <word xMin="110.798790" yMin="679.527510" xMax="145.396262" yMax="687.897510">exploited</word>
+          <word xMin="149.298160" yMin="679.527510" xMax="173.512805" yMax="687.897510">during</word>
+          <word xMin="177.398323" yMin="679.527510" xMax="188.700341" yMax="687.897510">the</word>
+          <word xMin="192.998089" yMin="679.527510" xMax="217.212734" yMax="687.897510">design</word>
+          <word xMin="220.998152" yMin="679.527510" xMax="244.448397" yMax="687.897510">phase,</word>
+          <word xMin="248.798470" yMin="679.527510" xMax="268.235797" yMax="687.897510">when</word>
+          <word xMin="272.998100" yMin="679.527510" xMax="284.300118" yMax="687.897510">the</word>
+        </line>
+        <line xMin="51.798030" yMin="690.591310" xMax="284.067807" yMax="699.141310">
+          <word xMin="51.798030" yMin="690.727500" xMax="84.848411" yMax="699.097500">transistor</word>
+          <word xMin="89.797810" yMin="690.727500" xMax="112.993255" yMax="699.097500">aspect</word>
+          <word xMin="116.297283" yMin="690.727500" xMax="136.972028" yMax="699.097500">ratios</word>
+          <word xMin="141.500000" yMin="690.591310" xMax="145.129700" yMax="699.141310">(</word>
+          <word xMin="146.219591" yMin="690.591310" xMax="155.299291" yMax="699.141310">W</word>
+          <word xMin="156.389182" yMin="690.591310" xMax="159.419382" yMax="699.141310">/</word>
+          <word xMin="160.509273" yMin="690.591310" xMax="166.569673" yMax="699.141310">L</word>
+          <word xMin="167.659564" yMin="690.591310" xMax="171.289264" yMax="699.141310">)</word>
+          <word xMin="171.800000" yMin="690.727910" xMax="183.092918" yMax="699.097910">are</word>
+          <word xMin="186.499776" yMin="690.727910" xMax="223.281339" yMax="699.097910">unknown.</word>
+          <word xMin="227.299717" yMin="690.727910" xMax="246.773444" yMax="699.097910">Once</word>
+          <word xMin="250.399612" yMin="690.727910" xMax="254.440012" yMax="699.097910">a</word>
+          <word xMin="258.099850" yMin="690.727910" xMax="272.523077" yMax="699.097910">pair</word>
+          <word xMin="276.600000" yMin="691.069410" xMax="284.067807" yMax="698.989410">of</word>
+        </line>
+        <line xMin="51.800000" yMin="701.286410" xMax="284.301679" yMax="710.106410">
+          <word xMin="51.800000" yMin="701.627910" xMax="74.595045" yMax="709.997910">values</word>
+          <word xMin="80.599680" yMin="701.627910" xMax="105.733516" yMax="709.997910">among</word>
+          <word xMin="110.500000" yMin="701.832810" xMax="114.250000" yMax="709.932810">g</word>
+          <word xMin="115.599925" yMin="701.832810" xMax="121.014925" yMax="709.932810">m</word>
+          <word xMin="122.364850" yMin="701.832810" xMax="124.449850" yMax="709.932810">/</word>
+          <word xMin="125.799775" yMin="701.832810" xMax="128.297275" yMax="709.932810">I</word>
+          <word xMin="129.647200" yMin="701.832810" xMax="135.062200" yMax="709.932810">D</word>
+          <word xMin="136.412125" yMin="701.832810" xMax="138.287125" yMax="709.932810">,</word>
+          <word xMin="144.600000" yMin="701.764510" xMax="157.797444" yMax="709.954510">gm,</word>
+          <word xMin="163.600000" yMin="701.627910" xMax="176.922218" yMax="709.997910">and</word>
+          <word xMin="182.000000" yMin="701.286410" xMax="185.429900" yMax="710.106410">I</word>
+          <word xMin="186.459797" yMin="701.286410" xMax="193.896397" yMax="710.106410">D</word>
+          <word xMin="197.900000" yMin="701.627910" xMax="210.212118" yMax="709.997910">has</word>
+          <word xMin="215.300110" yMin="701.627910" xMax="232.207637" yMax="709.997910">been</word>
+          <word xMin="238.000060" yMin="701.627910" xMax="268.202323" yMax="709.997910">derived,</word>
+          <word xMin="272.999661" yMin="701.627910" xMax="284.301679" yMax="709.997910">the</word>
+        </line>
+        <line xMin="52.300000" yMin="712.323010" xMax="283.938830" yMax="720.963010">
+          <word xMin="52.300000" yMin="712.323010" xMax="61.129800" yMax="720.963010">W</word>
+          <word xMin="62.719694" yMin="712.323010" xMax="65.666494" yMax="720.963010">/</word>
+          <word xMin="67.256388" yMin="712.323010" xMax="73.149988" yMax="720.963010">L</word>
+          <word xMin="74.900000" yMin="712.527910" xMax="82.389209" yMax="720.897910">of</word>
+          <word xMin="85.799707" yMin="712.527910" xMax="96.737725" yMax="720.897910">the</word>
+          <word xMin="100.200093" yMin="712.527910" xMax="133.250474" yMax="720.897910">transistor</word>
+          <word xMin="137.700192" yMin="712.527910" xMax="150.148810" yMax="720.897910">can</word>
+          <word xMin="153.500340" yMin="712.527910" xMax="162.272649" yMax="720.897910">be</word>
+          <word xMin="165.600610" yMin="712.527910" xMax="207.359691" yMax="720.897910">determined</word>
+          <word xMin="210.399819" yMin="712.527910" xMax="269.976336" yMax="720.897910">unambiguously.</word>
+          <word xMin="273.000630" yMin="712.527910" xMax="283.938830" yMax="720.897910">An</word>
+        </line>
+        <line xMin="51.600360" yMin="723.227560" xMax="273.590583" yMax="731.597560">
+          <word xMin="51.600360" yMin="723.227560" xMax="82.976614" yMax="731.597560">example</word>
+          <word xMin="85.900080" yMin="723.227560" xMax="93.389289" yMax="731.597560">of</word>
+          <word xMin="96.900160" yMin="723.227560" xMax="110.049660" yMax="731.597560">this</word>
+          <word xMin="112.899780" yMin="723.227560" xMax="150.008852" yMax="731.597560">procedure</word>
+          <word xMin="153.399330" yMin="723.227560" xMax="159.469030" yMax="731.597560">is</word>
+          <word xMin="162.499330" yMin="723.227560" xMax="198.097802" yMax="731.597560">described</word>
+          <word xMin="200.799410" yMin="723.227560" xMax="208.061119" yMax="731.597560">in</word>
+          <word xMin="211.298990" yMin="723.227560" xMax="222.237008" yMax="731.597560">the</word>
+          <word xMin="225.699376" yMin="723.227560" xMax="241.096303" yMax="731.597560">next</word>
+          <word xMin="244.898920" yMin="723.227560" xMax="273.590583" yMax="731.597560">section.</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="295.599410" yMin="263.081510" xMax="528.844215" yMax="516.197910">
+        <line xMin="305.200000" yMin="263.081510" xMax="528.231148" yMax="272.171510">
+          <word xMin="305.200000" yMin="263.627910" xMax="319.714318" yMax="271.997910">The</word>
+          <word xMin="322.900410" yMin="263.627910" xMax="344.175755" yMax="271.997910">actual</word>
+          <word xMin="347.900000" yMin="263.423010" xMax="375.099300" yMax="272.063010">gm/Io</word>
+          <word xMin="378.000000" yMin="263.627910" xMax="400.795045" yMax="271.997910">versus</word>
+          <word xMin="404.800000" yMin="263.081510" xMax="416.078397" yMax="272.171510">IO</word>
+          <word xMin="417.700000" yMin="263.627910" xMax="438.274736" yMax="271.997910">curve</word>
+          <word xMin="441.399494" yMin="263.627910" xMax="454.212112" yMax="271.997910">can</word>
+          <word xMin="457.299560" yMin="263.627910" xMax="465.798869" yMax="271.997910">be</word>
+          <word xMin="469.399557" yMin="263.627910" xMax="500.102320" yMax="271.997910">obtained</word>
+          <word xMin="504.099768" yMin="263.627910" xMax="511.088477" yMax="271.997910">in</word>
+          <word xMin="514.399330" yMin="263.627910" xMax="528.231148" yMax="271.997910">two</word>
+        </line>
+        <line xMin="296.199530" yMin="274.727460" xMax="528.076630" yMax="283.097460">
+          <word xMin="296.199530" yMin="274.727460" xMax="317.065466" yMax="283.097460">ways:</word>
+          <word xMin="321.099860" yMin="274.727460" xMax="342.275105" yMax="283.097460">either</word>
+          <word xMin="346.099653" yMin="274.727460" xMax="391.926161" yMax="283.097460">analytically,</word>
+          <word xMin="394.899950" yMin="274.727460" xMax="414.255286" yMax="283.097460">using</word>
+          <word xMin="418.800190" yMin="274.727460" xMax="422.840590" yMax="283.097460">a</word>
+          <word xMin="426.400510" yMin="274.727460" xMax="446.484028" yMax="283.097460">MOS</word>
+          <word xMin="450.000450" yMin="274.727460" xMax="483.050831" yMax="283.097460">transistor</word>
+          <word xMin="487.900039" yMin="274.727460" xMax="510.285675" yMax="283.097460">model</word>
+          <word xMin="514.699903" yMin="274.727460" xMax="528.076630" yMax="283.097460">that</word>
+        </line>
+        <line xMin="295.699940" yMin="285.627060" xMax="528.517434" yMax="293.997060">
+          <word xMin="295.699940" yMin="285.627060" xMax="327.676703" yMax="293.997060">provides</word>
+          <word xMin="331.399331" yMin="285.627060" xMax="335.439731" yMax="293.997060">a</word>
+          <word xMin="338.799269" yMin="285.627060" xMax="379.557350" yMax="293.997060">continuous</word>
+          <word xMin="382.698488" yMin="285.627060" xMax="435.431805" yMax="293.997060">representation</word>
+          <word xMin="438.599970" yMin="285.627060" xMax="446.089179" yMax="293.997060">of</word>
+          <word xMin="449.800250" yMin="285.627060" xMax="461.102268" yMax="293.997060">the</word>
+          <word xMin="464.500390" yMin="285.627060" xMax="497.550771" yMax="293.997060">transistor</word>
+          <word xMin="502.200780" yMin="285.627060" xMax="528.517434" yMax="293.997060">current</word>
+        </line>
+        <line xMin="296.200440" yMin="296.526660" xMax="528.844215" yMax="304.896660">
+          <word xMin="296.200440" yMin="296.526660" xMax="309.522658" yMax="304.896660">and</word>
+          <word xMin="313.000496" yMin="296.526660" xMax="358.490395" yMax="304.896660">small-signal</word>
+          <word xMin="361.100093" yMin="296.526660" xMax="401.839974" yMax="304.896660">parameters</word>
+          <word xMin="405.000950" yMin="296.526660" xMax="412.262659" yMax="304.896660">in</word>
+          <word xMin="415.900930" yMin="296.526660" xMax="425.000930" yMax="304.896660">all</word>
+          <word xMin="428.200490" yMin="296.526660" xMax="455.536344" yMax="304.896660">regions</word>
+          <word xMin="458.900250" yMin="296.526660" xMax="466.207459" yMax="304.896660">of</word>
+          <word xMin="469.800230" yMin="296.526660" xMax="508.529011" yMax="304.896660">operations</word>
+          <word xMin="511.800279" yMin="296.526660" xMax="528.844215" yMax="304.896660">(like</word>
+        </line>
+        <line xMin="295.900140" yMin="307.726650" xMax="527.523614" yMax="316.097910">
+          <word xMin="295.900140" yMin="307.726650" xMax="306.838158" yMax="316.096650">the</word>
+          <word xMin="309.599826" yMin="307.726650" xMax="331.985462" yMax="316.096650">model</word>
+          <word xMin="334.900010" yMin="307.726650" xMax="368.896973" yMax="316.096650">proposed</word>
+          <word xMin="371.300010" yMin="307.726650" xMax="378.561719" yMax="316.096650">in</word>
+          <word xMin="381.600000" yMin="307.727910" xMax="398.347808" yMax="316.097910">[7]),</word>
+          <word xMin="399.600000" yMin="307.727910" xMax="407.544209" yMax="316.097910">or</word>
+          <word xMin="409.700090" yMin="307.727910" xMax="427.663217" yMax="316.097910">from</word>
+          <word xMin="429.999915" yMin="307.727910" xMax="483.061014" yMax="316.097910">measurements</word>
+          <word xMin="485.200060" yMin="307.727910" xMax="494.208969" yMax="316.097910">on</word>
+          <word xMin="496.799830" yMin="307.727910" xMax="500.840230" yMax="316.097910">a</word>
+          <word xMin="503.299960" yMin="307.727910" xMax="527.523614" yMax="316.097910">typical</word>
+        </line>
+        <line xMin="295.799940" yMin="318.623010" xMax="528.183086" yMax="327.263010">
+          <word xMin="295.799940" yMin="318.827460" xMax="331.945140" yMax="327.197460">transistor.</word>
+          <word xMin="335.400410" yMin="318.827460" xMax="340.960510" yMax="327.197460">It</word>
+          <word xMin="343.899810" yMin="318.827460" xMax="350.060419" yMax="327.197460">is</word>
+          <word xMin="352.999537" yMin="318.827460" xMax="371.972764" yMax="327.197460">more</word>
+          <word xMin="374.899142" yMin="318.827460" xMax="417.249632" yMax="327.197460">appropriate</word>
+          <word xMin="419.599980" yMin="318.827460" xMax="427.089189" yMax="327.197460">of</word>
+          <word xMin="430.199660" yMin="318.827460" xMax="454.405205" yMax="327.197460">course</word>
+          <word xMin="457.100000" yMin="318.623010" xMax="464.472704" yMax="327.263010">to</word>
+          <word xMin="467.400000" yMin="318.827910" xMax="498.867163" yMax="327.197910">consider</word>
+          <word xMin="501.499611" yMin="318.827910" xMax="505.540011" yMax="327.197910">a</word>
+          <word xMin="508.199759" yMin="318.827910" xMax="528.183086" yMax="327.197910">mean</word>
+        </line>
+        <line xMin="295.899580" yMin="330.027900" xMax="527.098730" yMax="338.397900">
+          <word xMin="295.899580" yMin="330.027900" xMax="316.474316" yMax="338.397900">curve</word>
+          <word xMin="319.599620" yMin="330.027900" xMax="341.475656" yMax="338.397900">which</word>
+          <word xMin="345.199740" yMin="330.027900" xMax="351.360349" yMax="338.397900">is</word>
+          <word xMin="354.099267" yMin="330.027900" xMax="406.322984" yMax="338.397900">representative</word>
+          <word xMin="409.200040" yMin="330.027900" xMax="416.689249" yMax="338.397900">of</word>
+          <word xMin="420.100020" yMin="330.027900" xMax="424.140420" yMax="338.397900">a</word>
+          <word xMin="427.199658" yMin="330.027900" xMax="445.754194" yMax="338.397900">large</word>
+          <word xMin="448.399382" yMin="330.027900" xMax="476.654427" yMax="338.397900">number</word>
+          <word xMin="479.899760" yMin="330.027900" xMax="487.206969" yMax="338.397900">of</word>
+          <word xMin="490.599540" yMin="330.027900" xMax="527.098730" yMax="338.397900">transistors</word>
+        </line>
+        <line xMin="295.799480" yMin="341.423010" xMax="527.706967" yMax="350.063010">
+          <word xMin="295.799480" yMin="341.627790" xMax="303.061189" yMax="349.997790">in</word>
+          <word xMin="305.499170" yMin="341.627790" xMax="325.063806" yMax="349.997790">order</word>
+          <word xMin="327.399230" yMin="341.627790" xMax="334.660939" yMax="349.997790">to</word>
+          <word xMin="337.199020" yMin="341.627790" xMax="352.632347" yMax="349.997790">take</word>
+          <word xMin="355.099175" yMin="341.627790" xMax="369.531502" yMax="349.997790">into</word>
+          <word xMin="371.999240" yMin="341.627790" xMax="400.845694" yMax="349.997790">account</word>
+          <word xMin="402.999482" yMin="341.627790" xMax="444.258063" yMax="349.997790">technology</word>
+          <word xMin="446.898701" yMin="341.627790" xMax="474.735055" yMax="349.997790">spreads</word>
+          <word xMin="477.200000" yMin="341.876810" xMax="480.063400" yMax="349.739310">[</word>
+          <word xMin="480.700000" yMin="341.423010" xMax="495.175718" yMax="350.063010">111.</word>
+          <word xMin="496.800000" yMin="341.627910" xMax="508.975800" yMax="349.997910">We</word>
+          <word xMin="511.299940" yMin="341.627910" xMax="527.706967" yMax="349.997910">used</word>
+        </line>
+        <line xMin="295.900210" yMin="352.323010" xMax="528.007942" yMax="360.963010">
+          <word xMin="295.900210" yMin="352.527510" xMax="307.202228" yMax="360.897510">the</word>
+          <word xMin="309.800096" yMin="352.527510" xMax="358.311195" yMax="360.897510">experimental</word>
+          <word xMin="360.799863" yMin="352.527510" xMax="394.787726" yMax="360.897510">approach</word>
+          <word xMin="397.200500" yMin="352.527510" xMax="408.174918" yMax="360.897510">for</word>
+          <word xMin="410.500150" yMin="352.527510" xMax="449.228931" yMax="360.897510">evaluation</word>
+          <word xMin="451.800000" yMin="352.323010" xMax="459.220704" yMax="360.963010">of</word>
+          <word xMin="462.000000" yMin="352.527910" xMax="473.302018" yMax="360.897910">the</word>
+          <word xMin="475.999986" yMin="352.527910" xMax="491.433313" yMax="360.897910">data</word>
+          <word xMin="494.200350" yMin="352.527910" xMax="507.577077" yMax="360.897910">that</word>
+          <word xMin="510.599915" yMin="352.527910" xMax="528.007942" yMax="360.897910">were</word>
+        </line>
+        <line xMin="295.800330" yMin="363.727900" xMax="527.998660" yMax="372.097900">
+          <word xMin="295.800330" yMin="363.727900" xMax="312.207357" yMax="372.097900">used</word>
+          <word xMin="315.800310" yMin="363.727900" xMax="326.774728" yMax="372.097900">for</word>
+          <word xMin="329.600460" yMin="363.727900" xMax="340.902478" yMax="372.097900">the</word>
+          <word xMin="343.900746" yMin="363.727900" xMax="368.115391" yMax="372.097900">design</word>
+          <word xMin="371.000910" yMin="363.727900" xMax="378.490119" yMax="372.097900">of</word>
+          <word xMin="381.800517" yMin="363.727900" xMax="392.738535" yMax="372.097900">the</word>
+          <word xMin="396.200903" yMin="363.727900" xMax="412.198521" yMax="372.097900">SO1</word>
+          <word xMin="413.901040" yMin="363.727900" xMax="458.690421" yMax="372.097900">micropower</word>
+          <word xMin="461.800710" yMin="363.727900" xMax="480.137210" yMax="372.097900">OTA</word>
+          <word xMin="482.500480" yMin="363.727900" xMax="518.098952" yMax="372.097900">presented</word>
+          <word xMin="521.100860" yMin="363.727900" xMax="527.998660" yMax="372.097900">in</word>
+        </line>
+        <line xMin="295.800330" yMin="374.627500" xMax="359.118403" yMax="382.997500">
+          <word xMin="295.800330" yMin="374.627500" xMax="307.102348" yMax="382.997500">the</word>
+          <word xMin="311.199896" yMin="374.627500" xMax="327.142823" yMax="382.997500">next</word>
+          <word xMin="331.700740" yMin="374.627500" xMax="359.118403" yMax="382.997500">section.</word>
+        </line>
+        <line xMin="304.900330" yMin="385.727050" xMax="526.120000" yMax="394.097910">
+          <word xMin="304.900330" yMin="385.727050" xMax="319.587457" yMax="394.097050">Fig.</word>
+          <word xMin="323.600000" yMin="385.727910" xMax="328.350000" yMax="394.097910">1</word>
+          <word xMin="331.200000" yMin="385.727910" xMax="354.313636" yMax="394.097910">shows</word>
+          <word xMin="357.499364" yMin="385.727910" xMax="368.801382" yMax="394.097910">the</word>
+          <word xMin="372.199140" yMin="385.727910" xMax="409.908721" yMax="394.097910">calculated</word>
+          <word xMin="413.199099" yMin="385.727910" xMax="426.521317" yMax="394.097910">and</word>
+          <word xMin="430.199810" yMin="385.727910" xMax="464.433373" yMax="394.097910">measured</word>
+          <word xMin="468.700090" yMin="385.727910" xMax="486.763226" yMax="394.097910">plots</word>
+          <word xMin="490.299850" yMin="385.727910" xMax="497.789059" yMax="394.097910">of</word>
+          <word xMin="501.200000" yMin="385.727910" xMax="505.200000" yMax="394.097910">g</word>
+          <word xMin="506.320000" yMin="385.727910" xMax="512.096000" yMax="394.097910">m</word>
+          <word xMin="513.216000" yMin="385.727910" xMax="515.440000" yMax="394.097910">/</word>
+          <word xMin="516.560000" yMin="385.727910" xMax="519.224000" yMax="394.097910">I</word>
+          <word xMin="520.344000" yMin="385.727910" xMax="526.120000" yMax="394.097910">D</word>
+        </line>
+        <line xMin="295.800000" yMin="396.349810" xMax="526.366817" yMax="405.349810">
+          <word xMin="295.800000" yMin="396.827910" xMax="318.595045" yMax="405.197910">versus</word>
+          <word xMin="325.200000" yMin="396.349810" xMax="334.156395" yMax="405.349810">In</word>
+          <word xMin="340.600000" yMin="396.827910" xMax="351.574418" yMax="405.197910">for</word>
+          <word xMin="357.200000" yMin="396.759610" xMax="362.500000" yMax="405.219610">n</word>
+          <word xMin="368.400000" yMin="396.827910" xMax="381.722218" yMax="405.197910">and</word>
+          <word xMin="386.900000" yMin="396.691310" xMax="412.213918" yMax="405.241310">PMOS</word>
+          <word xMin="417.800000" yMin="396.827910" xMax="449.430872" yMax="405.197910">thin-film</word>
+          <word xMin="456.000000" yMin="396.691310" xMax="472.525012" yMax="405.241310">SO1</word>
+          <word xMin="476.500000" yMin="396.827910" xMax="526.366817" yMax="405.197910">fully-depleted</word>
+        </line>
+        <line xMin="295.799480" yMin="408.027900" xMax="527.334056" yMax="416.397900">
+          <word xMin="295.799480" yMin="408.027900" xMax="332.298670" yMax="416.397900">transistors</word>
+          <word xMin="336.699430" yMin="408.027900" xMax="344.461639" yMax="416.397900">as</word>
+          <word xMin="347.299110" yMin="408.027900" xMax="362.696037" yMax="416.397900">well</word>
+          <word xMin="365.998700" yMin="408.027900" xMax="373.760909" yMax="416.397900">as</word>
+          <word xMin="376.398817" yMin="408.027900" xMax="387.373235" yMax="416.397900">for</word>
+          <word xMin="389.999040" yMin="408.027900" xMax="405.905567" yMax="416.397900">bulk</word>
+          <word xMin="409.198675" yMin="408.027900" xMax="447.881774" yMax="416.397900">transistors.</word>
+          <word xMin="452.398650" yMin="408.027900" xMax="466.912968" yMax="416.397900">The</word>
+          <word xMin="469.598560" yMin="408.027900" xMax="507.308141" yMax="416.397900">calculated</word>
+          <word xMin="509.498420" yMin="408.027900" xMax="527.334056" yMax="416.397900">plain</word>
+        </line>
+        <line xMin="295.798570" yMin="418.923010" xMax="528.385600" yMax="427.563010">
+          <word xMin="295.798570" yMin="419.127450" xMax="320.004115" yMax="427.497450">curves</word>
+          <word xMin="324.498150" yMin="419.127450" xMax="341.906177" yMax="427.497450">were</word>
+          <word xMin="346.998355" yMin="419.127450" xMax="377.701118" yMax="427.497450">obtained</word>
+          <word xMin="383.397900" yMin="419.127450" xMax="415.884263" yMax="427.497450">applying</word>
+          <word xMin="420.097381" yMin="419.127450" xMax="431.399399" yMax="427.497450">the</word>
+          <word xMin="435.997720" yMin="419.127450" xMax="458.383356" yMax="427.497450">model</word>
+          <word xMin="463.298084" yMin="419.127450" xMax="497.440556" yMax="427.497450">presented</word>
+          <word xMin="503.497880" yMin="419.127450" xMax="510.395680" yMax="427.497450">in</word>
+          <word xMin="515.500000" yMin="418.923010" xMax="528.385600" yMax="427.563010">[7].</word>
+        </line>
+        <line xMin="295.600000" yMin="430.327910" xMax="528.273623" yMax="438.697910">
+          <word xMin="295.600000" yMin="430.327910" xMax="310.114318" yMax="438.697910">The</word>
+          <word xMin="312.200220" yMin="430.327910" xMax="328.652747" yMax="438.697910">bulk</word>
+          <word xMin="331.200110" yMin="430.327910" xMax="367.699300" yMax="438.697910">transistors</word>
+          <word xMin="371.500370" yMin="430.327910" xMax="395.705915" yMax="438.697910">curves</word>
+          <word xMin="398.000480" yMin="430.327910" xMax="415.408507" yMax="438.697910">were</word>
+          <word xMin="418.300760" yMin="430.327910" xMax="456.010341" yMax="438.697910">calculated</word>
+          <word xMin="458.500829" yMin="430.327910" xMax="493.516992" yMax="438.697910">assuming</word>
+          <word xMin="495.500610" yMin="430.327910" xMax="506.802628" yMax="438.697910">the</word>
+          <word xMin="509.300396" yMin="430.327910" xMax="528.273623" yMax="438.697910">same</word>
+        </line>
+        <line xMin="295.900300" yMin="441.391310" xMax="528.214338" yMax="449.941310">
+          <word xMin="295.900300" yMin="441.527900" xMax="328.978072" yMax="449.897900">substrate</word>
+          <word xMin="332.300300" yMin="441.527900" xMax="382.922508" yMax="449.897900">concentration</word>
+          <word xMin="386.000310" yMin="441.527900" xMax="396.974728" yMax="449.897900">for</word>
+          <word xMin="400.600350" yMin="441.527900" xMax="411.902368" yMax="449.897900">the</word>
+          <word xMin="415.700000" yMin="441.459610" xMax="421.250000" yMax="449.919610">n</word>
+          <word xMin="424.800000" yMin="441.527910" xMax="438.122218" yMax="449.897910">and</word>
+          <word xMin="441.400000" yMin="441.391310" xMax="466.713918" yMax="449.941310">PMOS</word>
+          <word xMin="470.000000" yMin="441.527910" xMax="509.685100" yMax="449.897910">transistors.</word>
+          <word xMin="513.700020" yMin="441.527910" xMax="528.214338" yMax="449.897910">The</word>
+        </line>
+        <line xMin="295.599410" yMin="452.586410" xMax="527.356395" yMax="461.406410">
+          <word xMin="295.599410" yMin="452.927850" xMax="327.657982" yMax="461.297850">different</word>
+          <word xMin="331.398810" yMin="452.927850" xMax="366.505882" yMax="461.297850">evolution</word>
+          <word xMin="370.698980" yMin="452.927850" xMax="378.006189" yMax="461.297850">of</word>
+          <word xMin="382.400000" yMin="452.859610" xMax="387.950000" yMax="461.319610">n</word>
+          <word xMin="392.300000" yMin="452.927910" xMax="405.622218" yMax="461.297910">and</word>
+          <word xMin="409.199610" yMin="452.927910" xMax="433.978910" yMax="461.297910">PMOS</word>
+          <word xMin="438.400000" yMin="452.927910" xMax="442.200000" yMax="461.297910">g</word>
+          <word xMin="443.567924" yMin="452.927910" xMax="449.055124" yMax="461.297910">m</word>
+          <word xMin="450.423048" yMin="452.927910" xMax="452.535848" yMax="461.297910">/</word>
+          <word xMin="453.903772" yMin="452.927910" xMax="456.434572" yMax="461.297910">I</word>
+          <word xMin="457.802496" yMin="452.927910" xMax="463.289696" yMax="461.297910">D</word>
+          <word xMin="469.600000" yMin="452.927910" xMax="493.805545" yMax="461.297910">curves</word>
+          <word xMin="497.599790" yMin="452.927910" xMax="513.506317" yMax="461.297910">with</word>
+          <word xMin="518.400000" yMin="452.586410" xMax="527.356395" yMax="461.406410">In</word>
+        </line>
+        <line xMin="295.800000" yMin="463.823010" xMax="528.102018" yMax="472.463010">
+          <word xMin="295.800000" yMin="464.027910" xMax="301.960609" yMax="472.397910">is</word>
+          <word xMin="305.200027" yMin="464.027910" xMax="330.506581" yMax="472.397910">related</word>
+          <word xMin="333.799780" yMin="464.027910" xMax="341.061489" yMax="472.397910">to</word>
+          <word xMin="344.499560" yMin="464.027910" xMax="355.801578" yMax="472.397910">the</word>
+          <word xMin="359.299800" yMin="464.027910" xMax="389.511163" yMax="472.397910">mobility</word>
+          <word xMin="394.100111" yMin="464.027910" xMax="432.346501" yMax="472.397910">difference.</word>
+          <word xMin="436.799950" yMin="464.027910" xMax="447.000959" yMax="472.397910">As</word>
+          <word xMin="451.100327" yMin="464.027910" xMax="475.224063" yMax="472.397910">shown</word>
+          <word xMin="478.299590" yMin="464.027910" xMax="485.288299" yMax="472.397910">in</word>
+          <word xMin="488.799807" yMin="464.027910" xMax="502.940934" yMax="472.397910">Fig.</word>
+          <word xMin="507.500000" yMin="463.823010" xMax="514.625000" yMax="472.463010">1,</word>
+          <word xMin="516.800000" yMin="464.027910" xMax="528.102018" yMax="472.397910">the</word>
+        </line>
+        <line xMin="295.599930" yMin="474.859610" xMax="526.599190" yMax="483.319610">
+          <word xMin="295.599930" yMin="474.927510" xMax="330.688802" yMax="483.297510">increased</word>
+          <word xMin="334.599800" yMin="474.927510" xMax="382.109899" yMax="483.297510">subthreshold</word>
+          <word xMin="385.599567" yMin="474.927510" xMax="405.173303" yMax="483.297510">slope</word>
+          <word xMin="408.700000" yMin="475.132810" xMax="416.138500" yMax="483.232810">of</word>
+          <word xMin="420.100000" yMin="474.927910" xMax="431.584018" yMax="483.297910">the</word>
+          <word xMin="435.499930" yMin="474.927910" xMax="467.130802" yMax="483.297910">thin-film</word>
+          <word xMin="471.600000" yMin="474.859610" xMax="487.749012" yMax="483.319610">SO1</word>
+          <word xMin="490.100000" yMin="474.927910" xMax="526.599190" yMax="483.297910">transistors</word>
+        </line>
+        <line xMin="295.600240" yMin="485.859610" xMax="528.101668" yMax="494.319610">
+          <word xMin="295.600240" yMin="485.927950" xMax="327.577003" yMax="494.297950">provides</word>
+          <word xMin="330.200351" yMin="485.927950" xMax="334.240751" yMax="494.297950">a</word>
+          <word xMin="336.700299" yMin="485.927950" xMax="374.155353" yMax="494.297950">maximum</word>
+          <word xMin="376.899731" yMin="485.927950" xMax="396.973967" yMax="494.297950">value</word>
+          <word xMin="399.600500" yMin="485.927950" xMax="407.089709" yMax="494.297950">of</word>
+          <word xMin="409.700000" yMin="485.859610" xMax="413.400000" yMax="494.319610">g</word>
+          <word xMin="414.805926" yMin="485.859610" xMax="420.148726" yMax="494.319610">m</word>
+          <word xMin="421.554652" yMin="485.859610" xMax="423.611852" yMax="494.319610">/</word>
+          <word xMin="425.017778" yMin="485.859610" xMax="427.481978" yMax="494.319610">I</word>
+          <word xMin="428.887904" yMin="485.859610" xMax="434.230704" yMax="494.319610">D</word>
+          <word xMin="439.300000" yMin="485.927910" xMax="446.789209" yMax="494.297910">of</word>
+          <word xMin="449.500190" yMin="485.927910" xMax="470.084026" yMax="494.297910">about</word>
+          <word xMin="472.700000" yMin="485.859610" xMax="482.302901" yMax="494.319610">35</word>
+          <word xMin="484.300000" yMin="486.201110" xMax="495.941022" yMax="494.211110">V-’</word>
+          <word xMin="503.500000" yMin="485.927910" xMax="514.474418" yMax="494.297910">for</word>
+          <word xMin="516.799650" yMin="485.927910" xMax="528.101668" yMax="494.297910">the</word>
+        </line>
+        <line xMin="295.799780" yMin="496.387010" xMax="528.304905" yMax="505.319610">
+          <word xMin="295.799780" yMin="496.927950" xMax="311.797398" yMax="505.297950">SO1</word>
+          <word xMin="313.299626" yMin="496.927950" xMax="349.798816" yMax="505.297950">transistors</word>
+          <word xMin="354.599430" yMin="496.927950" xMax="380.324675" yMax="505.297950">(which</word>
+          <word xMin="382.898883" yMin="496.927950" xMax="427.779173" yMax="505.297950">corresponds</word>
+          <word xMin="430.299600" yMin="496.927950" xMax="437.561309" yMax="505.297950">to</word>
+          <word xMin="440.600000" yMin="497.201110" xMax="446.150000" yMax="505.211110">n</word>
+          <word xMin="448.900000" yMin="496.387010" xMax="456.667200" yMax="505.267010">=</word>
+          <word xMin="458.900000" yMin="497.064510" xMax="476.096000" yMax="505.254510">1.1)</word>
+          <word xMin="476.300000" yMin="496.927910" xMax="496.155836" yMax="505.297910">while</word>
+          <word xMin="499.399804" yMin="496.927910" xMax="515.306331" yMax="505.297910">only</word>
+          <word xMin="518.900000" yMin="496.859610" xMax="528.304905" yMax="505.319610">25</word>
+        </line>
+        <line xMin="295.600000" yMin="507.789610" xMax="491.366200" yMax="516.197910">
+          <word xMin="295.600000" yMin="507.827910" xMax="310.373822" yMax="516.197910">Vpl</word>
+          <word xMin="315.400000" yMin="507.827910" xMax="321.560609" yMax="516.197910">is</word>
+          <word xMin="325.000227" yMin="507.827910" xMax="346.594163" yMax="516.197910">found</word>
+          <word xMin="349.699720" yMin="507.827910" xMax="360.674138" yMax="516.197910">for</word>
+          <word xMin="363.700070" yMin="507.827910" xMax="379.606597" yMax="516.197910">bulk</word>
+          <word xMin="383.500305" yMin="507.827910" xMax="419.999495" yMax="516.197910">transistors</word>
+          <word xMin="425.500000" yMin="508.101110" xMax="429.196300" yMax="516.111110">(</word>
+          <word xMin="430.306189" yMin="508.101110" xMax="435.856189" yMax="516.111110">n</word>
+          <word xMin="437.300000" yMin="507.789610" xMax="444.775200" yMax="516.022110">=</word>
+          <word xMin="447.700000" yMin="507.964510" xMax="463.707918" yMax="516.154510">1.5)</word>
+          <word xMin="466.100000" yMin="508.101110" xMax="491.366200" yMax="516.111110">([ll]).</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="314.900000" yMin="542.627910" xMax="508.936500" yMax="562.441310">
+        <line xMin="331.700000" yMin="542.627910" xMax="406.430500" yMax="550.997910">
+          <word xMin="331.700000" yMin="542.627910" xMax="344.404685" yMax="550.997910">111.</word>
+          <word xMin="348.600000" yMin="542.627910" xMax="406.430500" yMax="550.997910">APPLICATION</word>
+        </line>
+        <line xMin="400.300000" yMin="543.515810" xMax="491.754000" yMax="550.715810">
+          <word xMin="400.300000" yMin="543.789010" xMax="410.202724" yMax="550.629010">TO</word>
+          <word xMin="413.000000" yMin="543.652410" xMax="427.580000" yMax="550.672410">THE</word>
+          <word xMin="431.000000" yMin="543.584110" xMax="471.417500" yMax="550.694110">SYNTHESIS</word>
+          <word xMin="474.500000" yMin="543.515810" xMax="484.312400" yMax="550.715810">OF</word>
+          <word xMin="486.700000" yMin="543.789010" xMax="491.754000" yMax="550.629010">A</word>
+        </line>
+        <line xMin="314.900000" yMin="554.027910" xMax="419.821271" yMax="562.397910">
+          <word xMin="314.900000" yMin="554.027910" xMax="419.821271" yMax="562.397910">SILICON-ON-INSULATOR</word>
+        </line>
+        <line xMin="405.799809" yMin="554.027910" xMax="466.659790" yMax="562.397910">
+          <word xMin="405.799809" yMin="554.027910" xMax="466.659790" yMax="562.397910">MICROPOWER</word>
+        </line>
+        <line xMin="461.200000" yMin="553.891310" xMax="508.936500" yMax="562.441310">
+          <word xMin="461.200000" yMin="553.891310" xMax="487.556200" yMax="562.441310">CMOS</word>
+          <word xMin="490.600000" yMin="554.027910" xMax="508.936500" yMax="562.397910">OTA</word>
+        </line>
+      </block>
+      <block xMin="295.299260" yMin="569.127390" xMax="531.723080" yMax="730.963010">
+        <line xMin="304.699740" yMin="569.127390" xMax="528.495403" yMax="577.497390">
+          <word xMin="304.699740" yMin="569.127390" xMax="319.214058" yMax="577.497390">The</word>
+          <word xMin="323.599530" yMin="569.127390" xMax="357.596493" yMax="577.497390">proposed</word>
+          <word xMin="362.399200" yMin="569.127390" xMax="409.518090" yMax="577.497390">methodology</word>
+          <word xMin="415.698810" yMin="569.127390" xMax="430.031128" yMax="577.497390">was</word>
+          <word xMin="434.898536" yMin="569.127390" xMax="462.234390" yMax="577.497390">applied</word>
+          <word xMin="466.698668" yMin="569.127390" xMax="473.869377" yMax="577.497390">to</word>
+          <word xMin="478.298165" yMin="569.127390" xMax="489.600183" yMax="577.497390">the</word>
+          <word xMin="494.398431" yMin="569.127390" xMax="528.495403" yMax="577.497390">synthesis</word>
+        </line>
+        <line xMin="295.598830" yMin="580.127430" xMax="527.376007" yMax="588.497910">
+          <word xMin="295.598830" yMin="580.127430" xMax="303.088039" yMax="588.497430">of</word>
+          <word xMin="306.799110" yMin="580.127430" xMax="318.101128" yMax="588.497430">the</word>
+          <word xMin="321.799186" yMin="580.127430" xMax="355.787049" yMax="588.497430">cascoded</word>
+          <word xMin="359.499030" yMin="580.127430" xMax="378.017348" yMax="588.497430">OTA</word>
+          <word xMin="381.800000" yMin="580.127910" xMax="397.293800" yMax="588.497910">[12]</word>
+          <word xMin="400.700000" yMin="580.127910" xMax="424.823736" yMax="588.497910">shown</word>
+          <word xMin="428.399490" yMin="580.127910" xMax="435.388199" yMax="588.497910">in</word>
+          <word xMin="439.099270" yMin="580.127910" xMax="453.786397" yMax="588.497910">Fig.</word>
+          <word xMin="457.000000" yMin="580.127910" xMax="461.200000" yMax="588.497910">2</word>
+          <word xMin="462.208000" yMin="580.127910" xMax="464.308000" yMax="588.497910">.</word>
+          <word xMin="467.400000" yMin="580.127910" xMax="479.666709" yMax="588.497910">We</word>
+          <word xMin="483.499720" yMin="580.127910" xMax="510.744665" yMax="588.497910">assume</word>
+          <word xMin="513.999280" yMin="580.127910" xMax="527.376007" yMax="588.497910">that</word>
+        </line>
+        <line xMin="295.599280" yMin="590.686410" xMax="425.279200" yMax="599.506410">
+          <word xMin="295.599280" yMin="591.027510" xMax="306.901298" yMax="599.397510">the</word>
+          <word xMin="311.199410" yMin="591.027510" xMax="327.379210" yMax="599.397510">total</word>
+          <word xMin="331.999280" yMin="591.027510" xMax="355.813525" yMax="599.397510">supply</word>
+          <word xMin="360.599670" yMin="591.027510" xMax="386.916324" yMax="599.397510">current</word>
+          <word xMin="391.600000" yMin="590.686410" xMax="425.279200" yMax="599.506410">(Itot)</word>
+        </line>
+        <line xMin="416.500000" yMin="591.027910" xMax="528.274182" yMax="599.397910">
+          <word xMin="416.500000" yMin="591.027910" xMax="422.660609" yMax="599.397910">is</word>
+          <word xMin="426.800290" yMin="591.027910" xMax="451.206126" yMax="599.397910">known</word>
+          <word xMin="456.200000" yMin="591.232810" xMax="460.650000" yMax="599.332810">a</word>
+          <word xMin="463.999960" yMin="591.232810" xMax="486.107560" yMax="599.332810">priori</word>
+          <word xMin="490.600000" yMin="591.027910" xMax="503.922218" yMax="599.397910">and</word>
+          <word xMin="508.199946" yMin="591.027910" xMax="528.274182" yMax="599.397910">equal</word>
+        </line>
+        <line xMin="295.599740" yMin="601.927510" xMax="528.279032" yMax="610.297910">
+          <word xMin="295.599740" yMin="601.927510" xMax="302.770449" yMax="610.297510">to</word>
+          <word xMin="307.600000" yMin="601.927910" xMax="312.500000" yMax="610.297910">2</word>
+          <word xMin="317.400000" yMin="601.927910" xMax="331.122618" yMax="610.297910">PA.</word>
+          <word xMin="336.700190" yMin="601.927910" xMax="385.466089" yMax="610.297910">Furthermore,</word>
+          <word xMin="390.199727" yMin="601.927910" xMax="400.901236" yMax="610.297910">we</word>
+          <word xMin="406.099884" yMin="601.927910" xMax="433.344829" yMax="610.297910">assume</word>
+          <word xMin="438.199497" yMin="601.927910" xMax="452.122224" yMax="610.297910">that</word>
+          <word xMin="457.098832" yMin="601.927910" xMax="468.400850" yMax="610.297910">the</word>
+          <word xMin="473.400390" yMin="601.927910" xMax="488.797317" yMax="610.297910">load</word>
+          <word xMin="494.200260" yMin="601.927910" xMax="528.279032" yMax="610.297910">capacitor</word>
+        </line>
+        <line xMin="295.900000" yMin="612.486410" xMax="528.074236" yMax="621.306410">
+          <word xMin="295.900000" yMin="612.486410" xMax="299.263300" yMax="621.306410">(</word>
+          <word xMin="300.374199" yMin="612.486410" xMax="307.110899" yMax="621.306410">C</word>
+          <word xMin="308.221798" yMin="612.486410" xMax="313.837398" yMax="621.306410">L</word>
+          <word xMin="314.948297" yMin="612.486410" xMax="318.311597" yMax="621.306410">)</word>
+          <word xMin="318.200000" yMin="612.827910" xMax="324.403300" yMax="621.197910">is</word>
+          <word xMin="327.800000" yMin="612.827910" xMax="347.874236" yMax="621.197910">equal</word>
+          <word xMin="351.500040" yMin="612.827910" xMax="358.761749" yMax="621.197910">to</word>
+          <word xMin="363.200000" yMin="612.827910" xMax="372.605000" yMax="621.197910">10</word>
+          <word xMin="374.900000" yMin="612.827910" xMax="385.055600" yMax="621.197910">pF</word>
+          <word xMin="388.399850" yMin="612.827910" xMax="401.722068" yMax="621.197910">and</word>
+          <word xMin="405.199906" yMin="612.827910" xMax="416.501924" yMax="621.197910">the</word>
+          <word xMin="420.400000" yMin="612.827910" xMax="444.214245" yMax="621.197910">supply</word>
+          <word xMin="448.199590" yMin="612.827910" xMax="475.535444" yMax="621.197910">voltage</word>
+          <word xMin="479.400000" yMin="612.623010" xMax="512.546464" yMax="621.263010">(VDD)</word>
+          <word xMin="508.000000" yMin="612.827910" xMax="528.074236" yMax="621.197910">equal</word>
+        </line>
+        <line xMin="295.599630" yMin="623.727510" xMax="527.871410" yMax="632.097910">
+          <word xMin="295.599630" yMin="623.727510" xMax="302.770339" yMax="632.097510">to</word>
+          <word xMin="307.300000" yMin="623.864510" xMax="312.050000" yMax="632.054510">3</word>
+          <word xMin="316.200000" yMin="623.727910" xMax="325.146507" yMax="632.097910">V.</word>
+          <word xMin="329.900000" yMin="623.727910" xMax="344.232318" yMax="632.097910">The</word>
+          <word xMin="348.799426" yMin="623.727910" xMax="373.014071" yMax="632.097910">design</word>
+          <word xMin="377.198979" yMin="623.727910" xMax="414.308051" yMax="632.097910">procedure</word>
+          <word xMin="418.798719" yMin="623.727910" xMax="424.959328" yMax="632.097910">is</word>
+          <word xMin="429.500410" yMin="623.727910" xMax="464.989500" yMax="632.097910">illustrated</word>
+          <word xMin="470.800760" yMin="623.727910" xMax="486.734587" yMax="632.097910">here</word>
+          <word xMin="491.300785" yMin="623.727910" xMax="517.035130" yMax="632.097910">aiming</word>
+          <word xMin="521.301210" yMin="623.727910" xMax="527.871410" yMax="632.097910">at</word>
+        </line>
+        <line xMin="295.601190" yMin="634.318110" xMax="531.723080" yMax="643.228110">
+          <word xMin="295.601190" yMin="634.727950" xMax="306.539208" yMax="643.097950">the</word>
+          <word xMin="310.401066" yMin="634.727950" xMax="324.787893" yMax="643.097950">best</word>
+          <word xMin="328.900820" yMin="634.727950" xMax="379.423019" yMax="643.097950">performances</word>
+          <word xMin="383.400720" yMin="634.727950" xMax="390.389429" yMax="643.097950">in</word>
+          <word xMin="394.300700" yMin="634.727950" xMax="414.884536" yMax="643.097950">terms</word>
+          <word xMin="418.800994" yMin="634.727950" xMax="429.092912" yMax="643.097950">of:</word>
+          <word xMin="432.800980" yMin="634.727950" xMax="441.755289" yMax="643.097950">dc</word>
+          <word xMin="445.300740" yMin="634.727950" xMax="463.263867" yMax="643.097950">open</word>
+          <word xMin="467.200345" yMin="634.727950" xMax="483.652872" yMax="643.097950">loop</word>
+          <word xMin="487.400980" yMin="634.727950" xMax="502.797907" yMax="643.097950">gain</word>
+          <word xMin="507.500000" yMin="634.318110" xMax="531.723080" yMax="643.228110">(Ao),</word>
+        </line>
+        <line xMin="295.600000" yMin="644.994710" xMax="424.084336" yMax="654.497910">
+          <word xMin="295.600000" yMin="646.127910" xMax="329.159981" yMax="654.497910">transition</word>
+          <word xMin="335.599960" yMin="646.127910" xMax="372.709032" yMax="654.497910">frequency</word>
+          <word xMin="378.500000" yMin="644.994710" xMax="383.360000" yMax="654.348110">(</word>
+          <word xMin="384.817919" yMin="644.994710" xMax="389.677919" yMax="654.348110">f</word>
+          <word xMin="391.135838" yMin="644.994710" xMax="395.995838" yMax="654.348110">~</word>
+          <word xMin="397.453757" yMin="644.994710" xMax="402.313757" yMax="654.348110">)</word>
+          <word xMin="403.000000" yMin="646.127910" xMax="424.084336" yMax="654.497910">phase</word>
+        </line>
+        <line xMin="403.771676" yMin="644.994710" xMax="408.631676" yMax="654.348110">
+          <word xMin="403.771676" yMin="644.994710" xMax="408.631676" yMax="654.348110">,</word>
+        </line>
+        <line xMin="429.500110" yMin="645.581510" xMax="527.706617" yMax="654.671510">
+          <word xMin="429.500110" yMin="646.127910" xMax="454.824955" yMax="654.497910">margin</word>
+          <word xMin="461.200000" yMin="645.581510" xMax="464.496700" yMax="654.671510">(</word>
+          <word xMin="465.981601" yMin="645.581510" xMax="472.030501" yMax="654.671510">P</word>
+          <word xMin="473.515402" yMin="645.581510" xMax="481.762102" yMax="654.671510">M</word>
+          <word xMin="483.247003" yMin="645.581510" xMax="486.543703" yMax="654.671510">)</word>
+          <word xMin="488.028604" yMin="645.581510" xMax="490.503604" yMax="654.671510">,</word>
+          <word xMin="492.600000" yMin="646.127910" xMax="505.922218" yMax="654.497910">and</word>
+          <word xMin="511.299590" yMin="646.127910" xMax="527.706617" yMax="654.497910">slew</word>
+        </line>
+        <line xMin="295.299260" yMin="656.959610" xMax="527.961819" yMax="665.419610">
+          <word xMin="295.299260" yMin="657.027510" xMax="309.212887" yMax="665.397510">rate</word>
+          <word xMin="313.300000" yMin="656.959610" xMax="316.763200" yMax="665.419610">(</word>
+          <word xMin="318.011200" yMin="656.959610" xMax="323.211200" yMax="665.419610">S</word>
+          <word xMin="324.459200" yMin="656.959610" xMax="330.813600" yMax="665.419610">R</word>
+          <word xMin="332.061600" yMin="656.959610" xMax="335.524800" yMax="665.419610">)</word>
+          <word xMin="336.772800" yMin="656.959610" xMax="339.372800" yMax="665.419610">.</word>
+          <word xMin="339.500000" yMin="657.027910" xMax="375.762863" yMax="665.397910">However,</word>
+          <word xMin="379.299851" yMin="657.027910" xMax="384.450360" yMax="665.397910">it</word>
+          <word xMin="388.100370" yMin="657.027910" xMax="400.548988" yMax="665.397910">can</word>
+          <word xMin="404.500936" yMin="657.027910" xMax="466.224780" yMax="665.397910">straightforwardly</word>
+          <word xMin="471.800350" yMin="657.027910" xMax="480.572659" yMax="665.397910">be</word>
+          <word xMin="484.300110" yMin="657.027910" xMax="516.522573" yMax="665.397910">modified</word>
+          <word xMin="520.700110" yMin="657.027910" xMax="527.961819" yMax="665.397910">to</word>
+        </line>
+        <line xMin="295.299480" yMin="668.127460" xMax="527.943619" yMax="676.497460">
+          <word xMin="295.299480" yMin="668.127460" xMax="310.732807" yMax="676.497460">take</word>
+          <word xMin="315.399105" yMin="668.127460" xMax="329.831432" yMax="676.497460">into</word>
+          <word xMin="334.598740" yMin="668.127460" xMax="363.445194" yMax="676.497460">account</word>
+          <word xMin="367.898552" yMin="668.127460" xMax="386.962688" yMax="676.497460">other</word>
+          <word xMin="391.298656" yMin="668.127460" xMax="438.190046" yMax="676.497460">performance</word>
+          <word xMin="442.999760" yMin="668.127460" xMax="468.734014" yMax="676.497460">aspects</word>
+          <word xMin="474.499410" yMin="668.127460" xMax="491.543346" yMax="676.497460">(like</word>
+          <word xMin="495.699134" yMin="668.127460" xMax="515.272870" yMax="676.497460">noise</word>
+          <word xMin="519.999410" yMin="668.127460" xMax="527.943619" yMax="676.497460">or</word>
+        </line>
+        <line xMin="295.299480" yMin="679.127500" xMax="528.089877" yMax="687.497910">
+          <word xMin="295.299480" yMin="679.127500" xMax="327.604025" yMax="687.497500">common</word>
+          <word xMin="330.199163" yMin="679.127500" xMax="350.692090" yMax="687.497500">mode</word>
+          <word xMin="353.299240" yMin="679.127500" xMax="387.350621" yMax="687.497500">rejection)</word>
+          <word xMin="391.199739" yMin="679.127500" xMax="404.576466" yMax="687.497500">that</word>
+          <word xMin="407.400014" yMin="679.127500" xMax="422.888032" yMax="687.497500">may</word>
+          <word xMin="425.599650" yMin="679.127500" xMax="434.371959" yMax="687.497500">be</word>
+          <word xMin="436.799930" yMin="679.127500" xMax="466.747393" yMax="687.497500">relevant</word>
+          <word xMin="469.200000" yMin="679.264510" xMax="476.435400" yMax="687.454510">to</word>
+          <word xMin="478.800000" yMin="679.127910" xMax="490.102018" yMax="687.497910">the</word>
+          <word xMin="492.400496" yMin="679.127910" xMax="528.089877" yMax="687.497910">particular</word>
+        </line>
+        <line xMin="295.599710" yMin="690.027510" xMax="527.433494" yMax="698.397510">
+          <word xMin="295.599710" yMin="690.027510" xMax="339.315109" yMax="698.397510">application,</word>
+          <word xMin="342.099800" yMin="690.027510" xMax="349.589009" yMax="698.397510">as</word>
+          <word xMin="352.999780" yMin="690.027510" xMax="369.452307" yMax="698.397510">long</word>
+          <word xMin="372.799560" yMin="690.027510" xMax="380.288769" yMax="698.397510">as</word>
+          <word xMin="383.600077" yMin="690.027510" xMax="398.997004" yMax="698.397510">they</word>
+          <word xMin="402.999730" yMin="690.027510" xMax="414.292648" yMax="698.397510">are</word>
+          <word xMin="417.499670" yMin="690.027510" xMax="444.662533" yMax="698.397510">directly</word>
+          <word xMin="448.699930" yMin="690.027510" xMax="474.006484" yMax="698.397510">related</word>
+          <word xMin="477.199492" yMin="690.027510" xMax="484.370201" yMax="698.397510">to</word>
+          <word xMin="487.699709" yMin="690.027510" xMax="499.001727" yMax="698.397510">the</word>
+          <word xMin="502.199740" yMin="690.027510" xMax="527.433494" yMax="698.397510">unified</word>
+        </line>
+        <line xMin="295.300000" yMin="700.586410" xMax="527.395125" yMax="709.406410">
+          <word xMin="295.300000" yMin="700.859610" xMax="299.000000" yMax="709.319610">g</word>
+          <word xMin="300.627926" yMin="700.859610" xMax="305.970726" yMax="709.319610">m</word>
+          <word xMin="307.598652" yMin="700.859610" xMax="309.655852" yMax="709.319610">/</word>
+          <word xMin="311.283778" yMin="700.859610" xMax="313.747978" yMax="709.319610">I</word>
+          <word xMin="315.375904" yMin="700.859610" xMax="320.718704" yMax="709.319610">D</word>
+          <word xMin="325.800000" yMin="700.927910" xMax="348.595045" yMax="709.297910">versus</word>
+          <word xMin="353.000000" yMin="700.586410" xMax="362.271395" yMax="709.406410">In</word>
+          <word xMin="366.200000" yMin="700.927910" xMax="410.352108" yMax="709.297910">relationship,</word>
+          <word xMin="415.700360" yMin="700.927910" xMax="429.095560" yMax="709.297910">i.e.,</word>
+          <word xMin="432.800170" yMin="700.927910" xMax="439.970879" yMax="709.297910">to</word>
+          <word xMin="443.499677" yMin="700.927910" xMax="454.801695" yMax="709.297910">the</word>
+          <word xMin="458.499753" yMin="700.927910" xMax="484.816407" yMax="709.297910">current</word>
+          <word xMin="488.199605" yMin="700.927910" xMax="501.521823" yMax="709.297910">and</word>
+          <word xMin="505.100580" yMin="700.927910" xMax="527.395125" yMax="709.297910">small-</word>
+        </line>
+        <line xMin="295.600380" yMin="711.827510" xMax="526.933664" yMax="720.197510">
+          <word xMin="295.600380" yMin="711.827510" xMax="317.794825" yMax="720.197510">signal</word>
+          <word xMin="319.299783" yMin="711.827510" xMax="362.405573" yMax="720.197510">parameters.</word>
+          <word xMin="364.599401" yMin="711.827510" xMax="377.421119" yMax="720.197510">For</word>
+          <word xMin="379.799950" yMin="711.827510" xMax="421.759049" yMax="720.197510">large-signal</word>
+          <word xMin="424.999650" yMin="711.827510" xMax="450.306204" yMax="720.197510">related</word>
+          <word xMin="452.299832" yMin="711.827510" xMax="499.191222" yMax="720.197510">performance</word>
+          <word xMin="501.199410" yMin="711.827510" xMax="526.933664" yMax="720.197510">aspects</word>
+        </line>
+        <line xMin="295.599470" yMin="722.323010" xMax="528.070199" yMax="730.963010">
+          <word xMin="295.599470" yMin="722.527160" xMax="312.552497" yMax="730.897160">such</word>
+          <word xMin="314.899660" yMin="722.527160" xMax="322.661869" yMax="730.897160">as</word>
+          <word xMin="325.599440" yMin="722.527160" xMax="346.883885" yMax="730.897160">signal</word>
+          <word xMin="350.399670" yMin="722.527160" xMax="374.869115" yMax="730.897160">swing,</word>
+          <word xMin="377.299270" yMin="722.527160" xMax="385.798579" yMax="730.897160">an</word>
+          <word xMin="388.700000" yMin="722.459610" xMax="391.963400" yMax="730.919610">I</word>
+          <word xMin="392.943302" yMin="722.459610" xMax="400.018902" yMax="730.919610">D</word>
+          <word xMin="401.400000" yMin="725.002610" xMax="408.193200" yMax="729.997610">-</word>
+          <word xMin="409.400000" yMin="722.323010" xMax="419.002791" yMax="730.963010">V,</word>
+          <word xMin="423.500000" yMin="722.527910" xMax="431.171209" yMax="730.897910">or</word>
+          <word xMin="433.600000" yMin="722.459610" xMax="438.350000" yMax="730.919610">g</word>
+          <word xMin="439.584905" yMin="722.459610" xMax="446.443905" yMax="730.919610">m</word>
+          <word xMin="447.678810" yMin="722.459610" xMax="450.319810" yMax="730.919610">/</word>
+          <word xMin="451.554715" yMin="722.459610" xMax="454.718215" yMax="730.919610">I</word>
+          <word xMin="455.953120" yMin="722.459610" xMax="460.703120" yMax="730.919610">o</word>
+          <word xMin="462.200000" yMin="725.002610" xMax="468.993200" yMax="729.997610">-</word>
+          <word xMin="470.300000" yMin="722.323010" xMax="477.014600" yMax="730.963010">V,</word>
+          <word xMin="484.100000" yMin="722.527910" xMax="528.070199" yMax="730.897910">relationship</word>
+        </line>
+      </block>
+    </flow>
+    <flow>
+      <block xMin="78.145110" yMin="766.745810" xMax="533.348110" yMax="773.220810">
+        <line xMin="78.145110" yMin="766.745810" xMax="533.348110" yMax="773.220810">
+          <word xMin="78.145110" yMin="766.745810" xMax="111.605110" yMax="773.220810">Authorized</word>
+          <word xMin="113.551110" yMin="766.745810" xMax="139.227110" yMax="773.220810">licensed</word>
+          <word xMin="141.173110" yMin="766.745810" xMax="152.457110" yMax="773.220810">use</word>
+          <word xMin="154.403110" yMin="766.745810" xMax="174.626110" yMax="773.220810">limited</word>
+          <word xMin="176.572110" yMin="766.745810" xMax="184.356110" yMax="773.220810">to:</word>
+          <word xMin="186.302110" yMin="766.745810" xMax="231.438110" yMax="773.220810">ShanghaiTech</word>
+          <word xMin="233.384110" yMin="766.745810" xMax="266.053110" yMax="773.220810">University.</word>
+          <word xMin="267.999110" yMin="766.745810" xMax="306.905110" yMax="773.220810">Downloaded</word>
+          <word xMin="308.851110" yMin="766.745810" xMax="316.635110" yMax="773.220810">on</word>
+          <word xMin="318.581110" yMin="766.745810" xMax="333.757110" yMax="773.220810">June</word>
+          <word xMin="335.703110" yMin="766.745810" xMax="361.001110" yMax="773.220810">14,2026</word>
+          <word xMin="362.947110" yMin="766.745810" xMax="368.785110" yMax="773.220810">at</word>
+          <word xMin="370.731110" yMin="766.745810" xMax="397.975110" yMax="773.220810">09:44:28</word>
+          <word xMin="399.921110" yMin="766.745810" xMax="414.306110" yMax="773.220810">UTC</word>
+          <word xMin="416.252110" yMin="766.745810" xMax="430.252110" yMax="773.220810">from</word>
+          <word xMin="432.198110" yMin="766.745810" xMax="448.151110" yMax="773.220810">IEEE</word>
+          <word xMin="450.097110" yMin="766.745810" xMax="472.273110" yMax="773.220810">Xplore.</word>
+          <word xMin="476.165110" yMin="766.745810" xMax="512.726110" yMax="773.220810">Restrictions</word>
+          <word xMin="514.672110" yMin="766.745810" xMax="533.348110" yMax="773.220810">apply.</word>
+        </line>
+      </block>
+    </flow>
+  </page>
+</doc>
+</body>
+</html>
