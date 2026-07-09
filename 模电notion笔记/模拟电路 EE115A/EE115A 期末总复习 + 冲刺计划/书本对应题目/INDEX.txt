@@ -1,0 +1,22 @@
+Source PDF:
+/home/shenby/Downloads/Microelectronic Circuits 7ed [2015] annotated.pdf
+
+Generated PDFs:
+- Ch8_Problems.pdf -> source pages 606-622
+- Ch9_Problems.pdf -> source pages 703-724
+- Ch11_Problems.pdf -> source pages 926-948
+
+- Ch8_current_mirror_problems.pdf -> source pages 606-609, 618-620
+- Ch8_cascode_problems.pdf -> source pages 614-619
+- Ch8_folded_cascode_problems.pdf -> source pages 616-617
+
+- Ch9_MOS_differential_pair_problems.pdf -> source pages 703-705
+- Ch9_active_load_problems.pdf -> source pages 706, 714-719
+- Ch9_two-stage_CMOS_op_amp_problems.pdf -> source pages 719-721
+
+- Ch11_series-shunt_feedback_problems.pdf -> source pages 928-934
+- Ch11_MOS_feedback_amplifier_problems.pdf -> source pages 929-933, 940-944
+
+Notes:
+- Topic PDFs are page-based extracts, so some files intentionally overlap.
+- Page numbers above are the PDF page indices in the annotated source file.

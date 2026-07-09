@@ -1,0 +1,9 @@
+﻿精确总结,错误总结
+把总尾电流误当成单管电流,差分对平衡时总尾电流会被两边平分；计算 gm、W/L 前先把单管 ID 写出来。
+把电源轨误当成输入电压,supplies / rails 是上下电源边界；DC 分析保留，小信号分析接 AC ground，功耗用电源跨度乘静态电流。
+漏把功耗限制转成偏置电流方程,设计题缺方程时先扫 spec；功耗、增益、DC 输出点、saturation/headroom 都可能提供约束。
+无依据引入尾电阻导致模型跑偏,没有写 tail resistance / source resistance 时，不要自己加 RSS；按题目给的 tail current source 处理。
+把直流偏置电流和小信号输出电阻混在一起,题目给的偏置电流用于 DC 工作点；ro 只用于小信号输出电阻和增量电流，不要从 DC 电流里再扣。
+把局部输入阻抗和输出负载重复计入,先判断题目问局部量还是整体量；局部 Rin 按 common-gate 口径估算，输出负载留到 Ro 里统一处理。
+英文术语没有先翻成电路动作,dissipate 对应功耗 / 耗散；equilibrium 对应差分对平衡、两边电流各分一半。
+混淆 PMOS/NMOS 与 S/G/D 端子,MOS 电路先分清 PMOS / NMOS，再标 source、gate、drain；否则 VGS/VSG、方向和饱和条件都会跟着错。

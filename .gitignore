@@ -1,0 +1,17 @@
+# Course materials intentionally not published
+/homework1.pdf
+/homework2/
+/homework3/
+/homework4/
+/homework5/
+/homework6/
+/homework7/
+/homework8/
+/期中/
+
+# Local repository metadata from nested work areas
+**/.git/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
