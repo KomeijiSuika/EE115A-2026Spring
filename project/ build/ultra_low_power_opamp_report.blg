@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ultra_low_power_opamp_report.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ultra_low_power_opamp_refs.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 13 entries,
+            4087 wiz_defined-function locations,
+            904 strings with 9838 characters,
+and the built_in function-call counts, 12111 in all, are:
+= -- 1055
+> -- 247
+< -- 141
++ -- 145
+- -- 33
+* -- 616
+:= -- 1792
+add.period$ -- 26
+call.type$ -- 13
+change.case$ -- 13
+chr.to.int$ -- 309
+cite$ -- 13
+duplicate$ -- 833
+empty$ -- 832
+format.name$ -- 45
+if$ -- 2808
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 123
+newline$ -- 62
+num.names$ -- 13
+pop$ -- 205
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 931
+stack$ -- 0
+substring$ -- 741
+swap$ -- 802
+text.length$ -- 38
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 13
+warning$ -- 0
+while$ -- 62
+width$ -- 15
+write$ -- 164
