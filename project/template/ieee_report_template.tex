@@ -1,0 +1,110 @@
+\documentclass[conference,a4paper]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{siunitx}
+\usepackage{balance}
+\usepackage{hyperref}
+
+\hypersetup{
+  hidelinks
+}
+
+\title{Paper Title}
+
+\author{
+\IEEEauthorblockN{First Author, Second Author, Third Author}
+\IEEEauthorblockA{
+Department or School Name \\
+University Name \\
+City, Country \\
+\{author1, author2, author3\}@example.com
+}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This template follows the IEEE conference A4 format used by the Word file your instructor provided.
+Replace this text with a concise summary of your project, including the problem, the method, and the main result.
+Do not put citations, footnotes, or equations in the abstract unless they are genuinely necessary.
+\end{abstract}
+
+\begin{IEEEkeywords}
+analog circuits, IEEE format, course project, low-power design
+\end{IEEEkeywords}
+
+\section{Introduction}
+State the problem, the project scope, and why the topic matters.
+For your course project, this section usually answers:
+what circuit or system you study, what prior work exists, and what design tradeoff you focus on.
+
+\section{Background and Related Work}
+Summarize the key papers you reviewed.
+Use citations in standard IEEE style, for example \cite{example_article}.
+
+\section{Method or Analysis}
+Describe the circuit architecture, analytical model, or comparison method.
+If you reproduce literature data, explain the source and the normalization method.
+
+\subsection{Example Equation}
+Equations should be centered and numbered:
+\begin{equation}
+P = V \cdot I
+\label{eq:power}
+\end{equation}
+
+You can then reference \eqref{eq:power} in the text.
+
+\subsection{Example Table}
+Tables should place the caption above:
+\begin{table}[!t]
+  \caption{Example Comparison Table}
+  \label{tab:example}
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Method & Supply Voltage & Power \\
+    \midrule
+    Design A & \SI{1.2}{\volt} & \SI{10}{\micro\watt} \\
+    Design B & \SI{0.8}{\volt} & \SI{4}{\micro\watt} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Example Figure}
+Figures should place the caption below:
+\begin{figure}[!t]
+  \centering
+  \fbox{\rule{0pt}{1.2in}\rule{0.9\columnwidth}{0pt}}
+  \caption{Replace this placeholder with your circuit figure, waveform, or block diagram.}
+  \label{fig:placeholder}
+\end{figure}
+
+\section{Results and Discussion}
+Present the main comparison, simulation, calculation, or literature-derived results.
+Make the tradeoffs explicit: power, gain, bandwidth, efficiency, area, noise, or stability, depending on your topic.
+
+\section{Conclusion}
+Give a short conclusion with the main takeaways.
+If you propose an improvement beyond the literature review, state it here clearly.
+
+\section*{Acknowledgment}
+If you do not need this section, delete it.
+
+\balance
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

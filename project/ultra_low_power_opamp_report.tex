@@ -1,0 +1,324 @@
+\documentclass[conference,a4paper]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+\hypersetup{hidelinks}
+\urlstyle{same}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\newcommand{\pdffigure}[1]{%
+  \includegraphics[width=\columnwidth]{#1}%
+}
+
+\title{Ultra-Low-Power Operational Amplifiers:\\
+A Review of Low-Voltage and Low-Power Design Techniques}
+
+\author{
+\IEEEauthorblockN{Reimu Komeiji}
+\IEEEauthorblockA{
+EE115 Analog Circuits \\
+ShanghaiTech University \\
+Shanghai, China \\
+shenby2024@shanghaitech.edu.cn
+}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+As CMOS supply voltages approach the transistor threshold voltage and bias currents are reduced to the nanoampere-to-microampere range, operational amplifiers and operational transconductance amplifiers become constrained primarily by transistor-level voltage headroom, transconductance efficiency, output resistance, and noise. This paper reviews ultra-low-power CMOS operational-amplifier techniques from a circuit-design perspective rather than from an application-driven perspective. The discussion first establishes the device-level limits imposed by $g_m/I_D$, weak-inversion operation, intrinsic gain $g_mr_o$, MOS stacking, thermal noise, flicker noise, and mismatch. It then reviews mature low-voltage and low-power topology families, including bulk-driven input stages, floating-gate and quasi-floating-gate inputs, inverter-based current-reuse amplifiers, folded and recycling folded cascodes, class-AB output stages, and dynamic offset-cancellation techniques. The central conclusion is that ultra-low-power op-amp design is not merely the reduction of bias current; it is the deliberate redistribution of voltage headroom and reuse of bias current so that each nanoampere contributes maximum useful transconductance, gain, slew rate, or noise reduction.
+\end{abstract}
+
+\begin{IEEEkeywords}
+ultra-low-power op-amp, operational transconductance amplifier, CMOS analog design, $g_m/I_D$, weak inversion, bulk-driven MOSFET, current reuse, recycling folded cascode, class-AB, chopper stabilization
+\end{IEEEkeywords}
+
+\section{Introduction}
+Operational amplifiers are among the most important analog building blocks because they appear inside active filters, data converters, sensor interfaces, voltage references, low-dropout regulators, and mixed-signal feedback loops. In conventional analog design, an op-amp specification is usually approached by selecting a topology and then spending enough supply voltage and bias current to meet gain, bandwidth, slew-rate, and noise requirements. Ultra-low-power design reverses this freedom. The current budget is often fixed first, sometimes in the nanoampere or low-microampere range, and the supply voltage may be comparable to the MOS threshold voltage. Under these conditions, an op-amp cannot be designed by simply scaling down a classical two-stage or telescopic topology. The designer must instead decide how every transistor terminal, every current branch, and every stacked device contributes to the final small-signal or large-signal performance.
+
+This review therefore treats ultra-low-power op-amp design as a transistor-level resource-allocation problem. The first scarce resource is voltage headroom. A conventional gate-driven differential pair requires at least one threshold voltage plus overdrive margins for the input devices, the tail current source, and the load devices. The headroom problem is already central in 1-V op-amp design \cite{blalock1998onevolt}; when $V_{DD}$ is further reduced to 0.3--0.6 V in subthreshold or bulk-driven OTAs, the same stack can no longer support a useful input common-mode range or output swing without topology changes \cite{chatterjee2005halfvolt,kulej2020classab}. The second scarce resource is bias current. Lowering current reduces power, but it also lowers transconductance, bandwidth, slew rate, and thermal-noise efficiency. The third scarce resource is device area and capacitance. Increasing transistor dimensions improves matching and sometimes noise, but it increases parasitic capacitance and can reduce the transition frequency.
+
+The technical question of ultra-low-power op-amp design can therefore be phrased as follows: how can a CMOS OTA maintain useful gain, bandwidth, slew rate, and noise performance when both available voltage headroom and available bias current are severely limited? This question is fundamentally circuit-level. Energy-harvesting nodes, biomedical implants, and wearable systems provide motivation, but they are not the core of the review. The core is how low-voltage analog circuits restructure MOS operation: using weak inversion to maximize $g_m/I_D$ \cite{vittoz1977weakinversion,silveira1996gmid}, using body or floating-gate inputs to avoid threshold-voltage headroom \cite{chatterjee2005halfvolt,ramirez2004qfg}, using inverter-based current reuse to obtain $g_{mn}+g_{mp}$ \cite{nauta1992transconductor}, using folded or recycling cascodes to recover gain and speed \cite{assaad2009rfc}, and using class-AB branches to separate quiescent current from transient current \cite{kulej2020classab}.
+
+The remainder of this paper is organized as follows. Section II derives the device-level constraints that dominate ultra-low-power design. Section III reviews the main topology families and explains the transistor-level mechanism behind each one. Section IV compares these techniques using mechanism-oriented and performance-oriented tables. Section V discusses a candidate architecture combining weak-inversion bulk-driven input devices, a recycling folded-cascode load, and optional class-AB output drive. Section VI concludes the paper.
+
+\section{Device-Level Constraints in Ultra-Low-Power OTAs}
+\subsection{\texorpdfstring{$g_m/I_D$}{gm/ID} as the Central Low-Power Design Variable}
+The most compact way to describe low-power analog design is through the transconductance efficiency \cite{silveira1996gmid,enz1995ekv}
+\begin{equation}
+  \frac{g_m}{I_D}.
+\end{equation}
+This ratio measures how much small-signal transconductance is obtained per unit of drain current. Since the gain-bandwidth product of a single-pole OTA driving a load capacitor is approximately
+\begin{equation}
+  GBW \approx \frac{G_m}{2\pi C_L},
+\end{equation}
+improving $g_m/I_D$ directly improves the bandwidth available per unit current. In weak inversion,
+\begin{equation}
+  I_D \approx I_0\frac{W}{L}\exp\left(\frac{V_{GS}-V_{TH}}{nU_T}\right),
+  \qquad
+  g_m=\frac{I_D}{nU_T},
+\end{equation}
+and thus
+\begin{equation}
+  \left.\frac{g_m}{I_D}\right|_{\mathrm{weak\ inversion}}=\frac{1}{nU_T}.
+\end{equation}
+At room temperature, this gives a typical maximum around 25--30 V$^{-1}$ in bulk CMOS, depending on the subthreshold slope factor $n$. In strong inversion, by contrast,
+\begin{equation}
+  \frac{g_m}{I_D}\approx\frac{2}{V_{OV}},
+\end{equation}
+so an overdrive of 200 mV gives only about 10 V$^{-1}$. This comparison explains why many ultra-low-power OTAs bias their input devices near weak or moderate inversion.
+
+However, the maximum $g_m/I_D$ point is not automatically the best operating point. As devices move toward weak inversion, the required device width for a fixed current can increase, parasitic capacitances become more significant, and the transition frequency falls. In addition, weak-inversion current depends exponentially on threshold voltage and temperature, so process, voltage, and temperature sensitivity and mismatch become more severe. Thus $g_m/I_D$ is not merely a formula for maximizing efficiency; it is a coordinate system for choosing an operating point that balances efficiency, speed, gain, area, and robustness.
+
+\begin{figure}[!t]
+  \centering
+  \pdffigure{picture/fig1.png}
+  \caption{$g_m/I_D$ as a device-level design coordinate, reproduced from \cite{silveira1996gmid}. Weak inversion provides maximum current efficiency, while moderate inversion offers a practical speed-power compromise.}
+  \label{fig:gmid}
+\end{figure}
+
+\subsection{Minimum Supply Voltage and MOS Stack Budget}
+The most visible limitation at ultra-low supply voltage is not current but stack height. A classical NMOS input differential pair with a tail current source and active load requires the input devices to establish enough gate-source voltage, the tail device to remain in saturation, and the load devices to maintain output resistance. A useful stack-budget illustration is
+\begin{equation}
+  V_{DD,\mathrm{stack}}\sim V_{GS,\mathrm{in}}+
+  V_{DSAT,\mathrm{load}}+V_{DSAT,\mathrm{tail}},
+\end{equation}
+where $V_{GS,\mathrm{in}}=V_{TH}+V_{OV}$ for a strong-inversion gate-driven input device and becomes a bias-dependent weak-inversion gate-source voltage in subthreshold operation. The exact expression depends on topology, input common-mode level, load type, and output swing requirement, so this equation should not be read as a universal minimum-supply formula. The robust conclusion is that classical gate-driven input stages consume one threshold-related input bias plus several saturation margins. If $V_{TH}$ is 0.4--0.5 V, a supply of 0.5 V leaves almost no room for traditional stacking.
+
+This is why ultra-low-voltage op-amps often avoid one or more classical assumptions. The input signal may be applied to the bulk instead of the gate; it may be capacitively coupled to a floating gate or quasi-floating gate; the tail current source may be removed or replaced by pseudo-differential operation; a high-gain telescopic stack may be replaced by a folded cascode, gain-boosted branch, or recycling structure; and a two-stage amplifier may use compensation carefully so that the required output resistance is achieved without excessive voltage stacking. The important design mindset is to draw the vertical transistor stack and ask how many overdrive voltages are required from rail to rail. This stack budget often determines feasibility before small-signal gain equations are even considered.
+
+\subsection{Intrinsic Gain, Output Resistance, and Noise}
+The low-frequency gain of an OTA can be approximated as
+\begin{equation}
+  A_0 \approx G_mR_{out}.
+\end{equation}
+For a single transistor, the intrinsic gain is $g_mr_o$, where $r_o\approx 1/(\lambda I_D)$ under a simple channel-length modulation model. Low current tends to increase $r_o$, which seems beneficial, but scaled CMOS processes often have reduced intrinsic gain because channel-length modulation and short-channel effects degrade $r_o$. Therefore, obtaining high gain at low power is not guaranteed.
+
+Cascode devices are the classical solution for increasing output resistance. A telescopic cascode can provide high gain and speed, but it stacks many devices between supply rails and is poorly suited for sub-0.6-V operation. A folded cascode relaxes the input common-mode constraint by folding signal current into a different branch, but it usually consumes more current than a telescopic structure. Recycling folded cascodes and gain-boosting structures are attempts to recover the benefits of high output resistance without simply increasing current or stack height. The core trade-off is that high gain wants large $R_{out}$ and therefore cascodes, while low supply voltage forbids too many stacked devices.
+
+Thermal noise in a MOS transconductor scales approximately as
+\begin{equation}
+  \overline{v_{n,\mathrm{th}}^2}\propto\frac{1}{g_m}.
+\end{equation}
+For a fixed current, using weak inversion improves $g_m$ and therefore helps thermal-noise efficiency. But low-frequency flicker noise and offset do not disappear. Larger input devices can reduce mismatch and flicker noise, but they increase capacitance and area. Chopper stabilization and auto-zeroing can reduce offset and $1/f$ noise, but they introduce switches, clock feedthrough, ripple, aliasing, and additional design complexity \cite{enz1996offset}.
+
+\subsection{Large-Signal Behavior and Practical Sizing}
+Small-signal bandwidth is set by $G_m/C_L$, but large-signal response is limited by available charging or discharging current:
+\begin{equation}
+  SR=\frac{I_{\max}}{C_L}.
+\end{equation}
+If $I_{\max}$ is equal to the quiescent bias current, an ultra-low-power OTA will slew slowly even if its small-signal bandwidth is acceptable. This motivates class-AB output stages and adaptive-biasing techniques. Their purpose is to maintain small quiescent current at rest while allowing much larger transient current during large input steps. This separates small-signal current efficiency from large-signal drive efficiency.
+
+The $g_m/I_D$ methodology is valuable because it connects device operation to actual transistor dimensions. Once a designer chooses $g_m/I_D$, drain current, and channel length, the normalized current curves determine the required $W/L$. Input devices may be placed in weak or moderate inversion for efficiency, while current mirrors may be placed in stronger inversion for matching and robustness. Therefore, an ultra-low-power OTA is not uniformly weak inversion everywhere; different devices may deliberately operate in different inversion regions.
+
+\begin{figure}[!t]
+  \centering
+  \pdffigure{picture/fig2.png}
+  \caption{SOI micropower OTA basic schematic reproduced from \cite{silveira1996gmid}. Input and cascode devices can be assigned different inversion levels according to gain, speed, and matching requirements.}
+  \label{fig:soi_ota}
+\end{figure}
+
+\section{Topology Review}
+\subsection{Bulk-Driven Input Stages}
+Bulk-driven input stages are among the most direct responses to ultra-low supply voltage. Instead of applying the input signal to the gate, the signal is applied to the body terminal while the gate is held at a suitable dc bias. Since the input signal no longer needs to create a gate-source voltage larger than $V_{TH}$, the input common-mode range can extend closer to the rails. This makes bulk-driven OTAs attractive when $V_{DD}$ is comparable to or even below the threshold voltage.
+
+The drawback is body transconductance:
+\begin{equation}
+  g_{mb}=\eta g_m,
+\end{equation}
+where $\eta$ is typically much less than one. A value around 0.1--0.3 is common, depending on process and bias. This means that a bulk-driven input stage usually has lower transconductance, lower gain-bandwidth, and higher input-referred noise than a gate-driven input stage using the same current. Bulk-driven design therefore trades transconductance efficiency for input headroom.
+
+\begin{figure}[!t]
+  \centering
+  \pdffigure{picture/fig3.png}
+  \caption{Body-input gain stage for 0.5-V analog operation, reproduced from \cite{chatterjee2005halfvolt}. The input signal enters through the body terminals, while gate and common-mode biases set the operating point.}
+  \label{fig:body_input}
+\end{figure}
+
+The body-input topology should be interpreted carefully. The body input terminals, gate bias nodes, common-mode feedback path, and output nodes together solve a headroom problem but introduce a transconductance penalty. Biasing is equally important. In low-voltage circuits, every MOS terminal must be biased in a safe and useful region. Body terminals cannot be moved arbitrarily because of junction constraints and latch-up concerns. The gate must still establish a correct channel condition, and the common-mode feedback loop must maintain the output operating point over process, supply, and temperature variation.
+
+\subsection{Floating-Gate and Quasi-Floating-Gate Inputs}
+Floating-gate and quasi-floating-gate techniques attack the same threshold-voltage problem from a different direction. The input signal is capacitively coupled to a floating or quasi-floating gate, while the dc operating point is set independently. This allows the designer to separate signal swing from dc bias. In principle, a floating-gate input can support a large input common-mode range even when the supply voltage is very small.
+
+The cost is practical implementation complexity. Coupling capacitors consume area, floating nodes require initialization or leakage paths, and quasi-floating-gate pseudo-resistors may introduce very slow time constants or drift. These techniques are therefore useful when rail-to-rail input range is essential, but they complicate layout, startup, and long-term bias stability. In this review they are best treated as an alternative to bulk-driven input rather than as the dominant architecture.
+
+\subsection{Ultra-Low-Voltage Miller OTAs}
+A single body-driven input stage is not a complete op-amp. A useful review should also discuss full amplifier structures that include gain stages, output stages, and compensation. Ferreira, Pimenta, and Moreno's ultra-low-voltage Miller OTA is valuable for this reason \cite{ferreira2007miller}. It demonstrates that low-voltage operation requires coordinated choices: rail-to-rail input/output swing, low-headroom biasing, and frequency compensation must all be addressed together.
+
+\begin{figure}[!t]
+  \centering
+  \pdffigure{picture/fig9.png}
+  \caption{Improved Miller OTA topology reproduced from \cite{ferreira2007miller}. The relevant annotations are the input signal path, low-headroom biasing, compensation capacitor, and output swing path.}
+  \label{fig:miller_ota}
+\end{figure}
+
+This structure is best interpreted as a form of stack management. The relevant questions are which devices are removed, folded, or biased differently compared with a conventional two-stage OTA, which node sets the dominant pole, and how Miller compensation trades bandwidth for phase margin. Rail-to-rail swing also affects gain and distortion because devices may leave their preferred operating regions near the output limits.
+
+\subsection{Inverter-Based Current Reuse}
+Inverter-based OTAs are attractive because they use both NMOS and PMOS devices as active signal transistors. Under proper biasing, the effective transconductance can be approximated as
+\begin{equation}
+  G_{m,\mathrm{eff}}\approx g_{mn}+g_{mp}.
+\end{equation}
+This is a current-reuse principle: the same current path produces transconductance from both complementary devices. Compared with a single NMOS differential pair, the inverter-based structure can provide higher $G_m$ per current, which improves bandwidth and noise efficiency.
+
+Nauta's CMOS transconductor is historically associated with high-frequency continuous-time filters, not necessarily ultra-low-power design. Nevertheless, it is important in this review because it shows the structural origin of inverter-based current reuse and common-mode control with few internal nodes.
+
+\begin{figure}[!t]
+  \centering
+  \pdffigure{picture/fig5.png}
+  \caption{Inverter-based transconductor structure reproduced from \cite{nauta1992transconductor}. Complementary devices perform voltage-to-current conversion while auxiliary inverters stabilize common-mode behavior.}
+  \label{fig:nauta}
+\end{figure}
+
+The limitation is bias sensitivity. A CMOS inverter has its highest small-signal gain near the switching point, but that point depends on PMOS and NMOS strength, threshold voltages, temperature, and supply voltage. Modern inverter-based OTAs therefore need common-mode feedback, self-biasing, forward-body-biasing, or replica-bias circuits \cite{rodovalho2020inverter}. In a low-voltage environment, the lack of internal nodes is helpful, but the operating point must be carefully stabilized.
+
+\subsection{Folded Cascode and Recycling Folded Cascode}
+Cascode structures increase gain by increasing output resistance, but they consume voltage headroom. A telescopic cascode is efficient in current but poor in input/output swing. A folded cascode reduces the input common-mode constraint by steering signal current into a folded branch, but the folded branches consume additional current. In low-power design, this creates a question: can the folded branch current do more signal work?
+
+The recycling folded cascode answers yes. Assaad and Silva-Martinez observed that some devices in a conventional folded cascode are underused from a signal-transconductance perspective. By splitting input drivers and current mirrors, the recycling folded cascode brings previously idle devices into the signal path. The result is higher effective transconductance, gain-bandwidth, and slew rate without a proportional increase in static current.
+
+\begin{figure}[!t]
+  \centering
+  \pdffigure{picture/fig6.png}
+  \caption{Conventional folded-cascode amplifier reproduced from \cite{assaad2009rfc}. The recycling idea starts from identifying devices that mainly bias the conventional structure and can be reused for signal transconductance.}
+  \label{fig:rfc_concept}
+\end{figure}
+
+\begin{figure}[!t]
+  \centering
+  \pdffigure{picture/fig7.png}
+  \caption{Recycling folded-cascode OTA reproduced from \cite{assaad2009rfc}. The split input paths, mirror gain factor $K$, and output node are used for gain and bandwidth enhancement.}
+  \label{fig:rfc_ota}
+\end{figure}
+
+A simplified expression for the improvement is
+\begin{equation}
+  G_{m,\mathrm{RFC}}\approx (1+K)G_{m,\mathrm{FC}},
+\end{equation}
+where $K$ is related to the current mirror ratio or recycling gain. This equation should not be treated as an exact universal law; it is a compact way to explain why recycling increases effective transconductance. This mechanism directly supports the proposed design direction because it compensates for the lower body transconductance of low-voltage input devices.
+
+\subsection{Class-AB Output Stages and Dynamic Offset Cancellation}
+Weak-inversion and bulk-driven input stages solve small-signal current efficiency and headroom problems, but they do not automatically solve large-signal output drive. If the maximum charging current is limited to the static bias current, the slew rate is small:
+\begin{equation}
+  SR=\frac{I_{\max}}{C_L}.
+\end{equation}
+Class-AB output stages solve this by allowing the current to increase dynamically during large-signal transitions. The quiescent current remains low, but the transient current can be much larger. This improves slew-rate efficiency without paying the full static-power cost.
+
+\begin{figure}[!t]
+  \centering
+  \pdffigure{picture/fig8.png}
+  \caption{0.3-V class-AB bulk-driven OTA reproduced from \cite{kulej2020classab}. The important nodes are the input path, bias current path, class-AB branch, and output node.}
+  \label{fig:classab}
+\end{figure}
+
+Offset and flicker noise are serious in low-frequency, low-current OTAs. Chopper stabilization modulates the input signal to a higher frequency before amplification, so that amplifier offset and $1/f$ noise are shifted away from the signal band and filtered after demodulation. Auto-zeroing samples offset and subtracts it in a later phase. Correlated double sampling is closely related. These techniques are switching-circuit methods for reshaping low-frequency nonidealities. Their cost is also circuit-level: switches add charge injection and clock feedthrough, chopping creates ripple, and auto-zeroing can alias wideband noise.
+
+\section{Comparison and Discussion}
+\subsection{Mechanism-Oriented Comparison}
+Table~\ref{tab:mechanism} compares the reviewed techniques by transistor-level mechanism rather than by application. This organization is important because ultra-low-power OTAs are often used in biomedical, energy-harvesting, or sensor-interface systems, but the same circuit bottlenecks appear across those applications.
+
+\begin{table*}[!t]
+  \caption{Mechanism-Oriented Comparison of Ultra-Low-Power OTA Techniques}
+  \label{tab:mechanism}
+  \centering
+  \footnotesize
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}L{0.17\textwidth}L{0.23\textwidth}L{0.17\textwidth}L{0.19\textwidth}L{0.12\textwidth}@{}}
+    \toprule
+    Technique & Main transistor-level problem solved & Primary benefit & Main penalty & Figure evidence \\
+    \midrule
+    $g_m/I_D$ methodology & Choosing inversion level under current constraint & Systematic sizing and visible efficiency-speed trade-off & Requires process curves or characterization & Fig.~\ref{fig:gmid} \\
+    Bulk-driven input & Input common-mode headroom near $V_{TH}$ & Sub-0.5-V or rail-to-rail input possible & $g_{mb}\ll g_m$; noise and gain penalty & Fig.~\ref{fig:body_input} \\
+    Floating or quasi-floating gate & DC bias separated from signal input & Large input range at low supply & Capacitor area, leakage, and initialization & Literature \\
+    Inverter-based current reuse & Low $G_m$ under current constraint & $g_{mn}+g_{mp}$ from the same current path & Common-mode and PVT sensitivity & Fig.~\ref{fig:nauta} \\
+    Folded cascode & Gain and input-swing conflict & High gain with improved input/output range & More current than telescopic cascode & Literature \\
+    Recycling folded cascode & Inefficient folded-branch current use & Higher $G_m$, GBW, and SR without proportional current & More complex mirrors and matching constraints & Figs.~\ref{fig:rfc_concept}, \ref{fig:rfc_ota} \\
+    Class-AB output & Low slew rate under low quiescent current & Transient current exceeds static current & Stability and nonlinear settling complexity & Fig.~\ref{fig:classab} \\
+    Chopper or auto-zero & Offset and low-frequency noise & Reduced offset and $1/f$ noise & Ripple, aliasing, and clock feedthrough & Literature \\
+    \bottomrule
+  \end{tabular*}
+\end{table*}
+
+\subsection{Performance Comparison}
+Table~\ref{tab:performance} keeps only metrics that can be read directly from the representative papers or their abstract-level measured summaries. This is intentionally narrower than a survey mega-table, but it avoids inventing missing values and keeps the comparison traceable to the cited literature. Rows marked as simulation-only or historical mechanism references are included for context but should not be ranked against measured silicon prototypes. For every measured metric, the original unit should be recorded and converted before computing a figure of merit:
+\begin{align}
+  FoM_S &= \frac{GBW[\mathrm{MHz}]C_L[\mathrm{pF}]}{I_{DD}[\mathrm{mA}]},\\
+  FoM_L &= \frac{SR[\mathrm{V}/\mu\mathrm{s}]C_L[\mathrm{pF}]}{I_{DD}[\mathrm{mA}]}.
+\end{align}
+
+\begin{table*}[!t]
+  \caption{Representative Measured Performance and Context Rows Reported in the Reviewed Literature}
+  \label{tab:performance}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}L{0.205\textwidth}cL{0.115\textwidth}cccccL{0.095\textwidth}@{}}
+    \toprule
+    Work & $V_{DD}$ & Power/current & Gain & GBW & SR & $C_L$ & $FoM_S$ & $FoM_L$ \\
+    \midrule
+    Blalock 1998 1-V design rules & 1 V class & design study & -- & -- & -- & -- & -- & -- \\
+    Chatterjee 2005 body-input OTA & 0.5 V & 110 $\mu$W & 52 dB & 2.5 MHz & -- & 20 pF & 227 & -- \\
+    Chatterjee 2005 gate-input OTA & 0.5 V & 75 $\mu$W & 62 dB & 10 MHz & -- & -- & -- & -- \\
+    Ferreira 2007 Miller OTA (journal) & 0.6 V min. & 550 nW & -- & -- & -- & -- & -- & -- \\
+    Nauta 1992 inverter transconductor & 2.5--10 V & tunable supply & -- & -- & -- & -- & -- & -- \\
+    Assaad 2009 conventional FC & 1.8 V & same as RFC & -- & $\approx$1/2 RFC & $<$1/2 RFC & 5.6 pF & -- & -- \\
+    Assaad 2009 RFC & 1.8 V & 1.44 mW / 0.8 mA & 60.9 dB & 134.2 MHz & 94.1 V/$\mu$s & 5.6 pF & 939 & 659 \\
+    Khateb and Kulej 2019 DDA & 0.3 V & 22 nW / 73 nA & $>$60 dB & 1.85 kHz & 1.55 V/ms & 20 pF & 505 & 423 \\
+    Kulej and Khateb 2020 class-AB BD OTA & 0.3 V & 12.6 nW / 42 nA & 64.7 dB & 2.96 kHz & 4.15 V/ms & 30 pF & 2114 & 2964 \\
+    Rodovalho 2020 inverter OTA-A & 0.3--0.6 V & 600 pW & 39 dB & -- & -- & -- & sim. only & sim. only \\
+    \bottomrule
+  \end{tabular*}
+\end{table*}
+
+The table also shows why the FoM columns must be interpreted with context. The 0.3-V class-AB bulk-driven OTA reaches much larger current-normalized FoMs than the 0.5-V body-input OTA because its current is in the tens of nanoamperes, but its absolute GBW is only in the kilohertz range. Conversely, the recycling folded cascode operates at a milliwatt power level, yet it demonstrates that current reuse can also improve speed and slew-rate efficiency at much higher bandwidths. The correct trend is therefore not that one topology is universally best, but that each topology spends voltage headroom and bias current differently.
+
+The final discussion should avoid saying that one topology is universally best. If minimum supply voltage is the dominant constraint, bulk-driven and floating-gate inputs are attractive because they relax the input common-mode requirement \cite{chatterjee2005halfvolt,ramirez2004qfg}. Their penalty is reduced effective transconductance and higher noise. If current efficiency is the dominant constraint, weak or moderate inversion and inverter-based current reuse are attractive because they maximize useful $G_m$ per current \cite{silveira1996gmid,nauta1992transconductor,rodovalho2020inverter}. Their penalty is speed, PVT sensitivity, and common-mode bias complexity.
+
+If gain and bandwidth are insufficient, folded and recycling folded cascodes are attractive because they improve $R_{out}$ and effective $G_m$ \cite{assaad2009rfc}. Their penalty is topology complexity and sometimes additional current branches. If large-signal slew rate is limiting, class-AB output stages are attractive because they increase transient current without increasing quiescent current \cite{kulej2020classab}. If a differential-difference input interface is required at extremely low voltage, the 0.3-V DDA result shows that bulk-driven low-current design can still preserve useful gain and kilohertz-class bandwidth \cite{khateb2019dda}. If low-frequency precision is limiting, chopping and auto-zeroing are attractive because they suppress offset and flicker noise, but their penalty is ripple, switching artifacts, and aliasing \cite{enz1996offset}. This conditional structure is more defensible than claiming that a single ultra-low-power op-amp topology is optimal.
+
+\section{Candidate Architecture}
+The proposed direction is a qualitative circuit architecture rather than a simulated design. A coherent candidate OTA core is a weak-inversion-biased bulk-driven input pair followed by a recycling folded-cascode load and an optional class-AB output stage. The motivation is that each block addresses a different transistor-level bottleneck. The bulk-driven input pair addresses voltage headroom by moving the signal path away from the gate-threshold constraint. Weak-inversion biasing maximizes current efficiency:
+\begin{equation}
+  \frac{g_{mb}}{I_D}=\eta\frac{g_m}{I_D}.
+\end{equation}
+Because $\eta$ is smaller than one, the body-driven input alone would suffer a transconductance penalty. The recycling folded-cascode load is therefore used to recover effective transconductance:
+\begin{equation}
+  G_{m,\mathrm{eff}}\approx(1+K)g_{mb}.
+\end{equation}
+This expression is an intuitive first-order argument. Recycling does not change the fact that the input is body-driven, but it can reuse branch currents so that the effective signal transconductance is larger than the raw $g_{mb}$ of the input pair.
+
+The optional class-AB output stage addresses a different issue. Even if the small-signal $G_m$ is acceptable, a nanopower OTA can have poor slew rate because output current is limited. A class-AB branch allows the transient charging current to exceed the quiescent bias current:
+\begin{equation}
+  I_{\max,\mathrm{transient}}\gg I_Q,
+  \qquad
+  SR=\frac{I_{\max,\mathrm{transient}}}{C_L}.
+\end{equation}
+Thus the proposed architecture separates three problems: input headroom, small-signal transconductance efficiency, and large-signal drive.
+
+The architectural penalty is that these advantages do not come for free. A bulk-driven input pair reduces the usable transconductance and increases sensitivity to body-effect parameter variation, so the downstream load and compensation network must be designed with modest phase-margin assumptions rather than with optimistic single-pole approximations. The recycling folded-cascode stage also introduces additional mirror ratios and internal high-impedance nodes, which tighten matching and stability requirements. In practice, this means that bias generation, common-mode control, and compensation capacitor sizing are part of the architecture itself rather than secondary implementation details.
+
+The combination is topologically coherent because each block addresses a distinct bottleneck. It is supported qualitatively by existing literature on bulk-driven inputs, recycling folded cascodes, and class-AB OTAs. However, without a transistor-level schematic, process selection, bias design, and simulation results, it cannot support claims of specific gain, GBW, slew rate, power, or figure of merit. It also should not be presented as a claim of novelty, because similar combinations may already exist in recent low-voltage OTA literature. Its value lies in giving a compact architectural explanation of why the blocks fit together.
+
+\section{Conclusion}
+Ultra-low-power op-amp design is best understood as transistor-level resource allocation under simultaneous voltage and current constraints. The $g_m/I_D$ methodology provides the device-level language for choosing inversion region and sizing transistors. Bulk-driven and floating-gate inputs address the threshold-voltage headroom problem, but they pay a transconductance and noise penalty. Inverter-based OTAs reuse current by adding NMOS and PMOS transconductances in the same current path, but require careful common-mode stabilization. Folded cascodes recover output resistance at the cost of current, while recycling folded cascodes improve effective transconductance and slew rate by placing otherwise idle devices into the signal path. Class-AB stages separate quiescent current from transient drive, and chopping or auto-zeroing suppresses low-frequency nonidealities at the cost of switching artifacts.
+
+Ultra-low-power OTA design is therefore best presented through circuit schematics, transistor operating regions, current paths, node voltages, and measured topology-level trade-offs. Applications can remain in the introduction as motivation, but the technical body is more coherent when organized around headroom, $g_m/I_D$, $g_{mb}$, $g_mr_o$, current reuse, slew-rate current, and noise-shaping mechanisms.
+
+From that viewpoint, the most convincing future extension of this review would not be a broader list of topologies, but a tighter transistor-level comparison under a common specification set: supply voltage, load capacitance, allowable input common-mode range, target phase margin, and noise band. Once those constraints are fixed, the reviewed techniques can be compared on equal ground, and the real architectural trade-off between headroom, current efficiency, and robustness becomes much easier to see.
+
+\IEEEtriggeratref{12}
+\bibliographystyle{IEEEtran}
+\bibliography{ultra_low_power_opamp_refs}
+
+\end{document}

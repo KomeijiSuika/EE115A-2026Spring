@@ -1,0 +1,16 @@
+build/
+tmp/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.xdv
+*.pdf
+.DS_Store
+Thumbs.db
+paper_picture
